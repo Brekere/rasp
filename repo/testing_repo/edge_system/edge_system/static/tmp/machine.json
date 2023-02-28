@@ -1,0 +1,14 @@
+{
+    "nickname" : "Parts Assembler", 
+    "description" : "Join different parts on a big item for car parts .........", 
+    "brand" : "ASBajio", 
+    "model" : "1", 
+    "voltage" : 120, 
+    "amperage" : 2.0, 
+    "serie" : "XXX.000.000.001", 
+    "id_line" : "0",
+    "manufacturing_date" : "2021-08-30T00:00:00", 
+    "instalation_date" : "2021-09-15T13:45:00", 
+    "id_supplier" : 0, 
+    "run_date" : "2021-09-16T08:00:00"
+}

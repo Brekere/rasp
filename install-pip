@@ -1,0 +1,9 @@
+   38  pip install numpy cython
+   55  pip install --extra-index-url
+   56  pip install --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v42 tensorflow-gpu==1.13.1+nv19.3
+   57  pip install keras
+   74  pip install matplotlib
+  130  pip install -U Flask-SQLAlchemy
+  132  pip install pymysql
+  340  history | grep "pip install"
+  341  history | grep "pip install" > install-pip

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historical Data</title>
+    <!-- BOOTSTRAP 4 -->
+    <!--
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    -->	
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css')}}">
+	<!-- CUSTOM CSS -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/main.css')}}">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/"> 
+            <span><img src="{{ url_for('static',filename='img/asb-logo_01.png')}}" height="50"/></span> 
+            &emsp; Historical Data Visualization</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('machine.day_production')}}">Day</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('machine.week_production')}}">Week Metrics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('machine.month_production')}}">Month Metrics</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('machine.info')}}">Info Machine</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+    <div class="container p-4">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h2> Registrate! </h2>
+   <form action="{{ url_for('machine.machine_register')}}" method= "POST">
+
+        <div class="form-group">
+            {{ form.id.label }} 
+            {{ form.id(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.nickname.label }} 
+            {{ form.nickname(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.description.label }} 
+            {{ form.description(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.brand.label }} 
+            {{ form.brand(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.model.label }} 
+            {{ form.model(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.voltage.label }} 
+            {{ form.voltage(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.amperage.label }} 
+            {{ form.amperage(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.serie.label }} 
+            {{ form.serie(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.id_line.label }} 
+            {{ form.id_line(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.manufacturing_date.label }} 
+            {{ form.manufacturing_date(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.instalation_date.label }} 
+            {{ form.instalation_date(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.id_supplier.label }} 
+            {{ form.id_supplier(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.run_date.label }} 
+            {{ form.run_date(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.path_image.label }} 
+            {{ form.path_image(class="form-control") }}
+        </div>
+       <input class="btn btn-success" type="submit" value="Enviar">
+   </form>
+</div>
+
+{% endblock %}

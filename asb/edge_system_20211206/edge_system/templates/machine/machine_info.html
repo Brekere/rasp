@@ -1,0 +1,28 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <div>
+        <h1 class="display-4"> <img src="{{ url_for('static',filename='img/tmp_workstation_01.jpeg')}}" height="150"> 
+            {{nickname}} Information</h1>
+    </div>
+  <table class="blueTable"> 
+    <thead>
+    <tr>
+        <th>Element</th>
+        <th>Data</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in data %}
+        <tr>
+            <td>{{item}}</td>
+            <td>{{data[item]}}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,97 @@
+    1  python --version
+    2  python3 --version
+    3  gcc --version
+    4  g++ --version
+    5  uname -a
+    6  apt update
+    7  sudo apt update
+    8  sudo apt upgrade
+    9  pwd
+   10  ls
+   11  cd ~
+   12  sudo mysql -u root -p
+   13  ls
+   14  cd edge_system/
+   15  ls
+   16  nano configuration.py 
+   17  python3 run.py 
+   18  ls
+   19  nano asb-socket.service 
+   20  sudo mysql -u root -p
+   21  ls
+   22  nano asb-app.service 
+   23  nano chromium-browser-appASB.desktop 
+   24  history 
+   25  chromium-browser --password-store=basic %U --start-maximized --app=http://localhost:5055
+   26  history > ./../histCmd/hist20211006-3
+   27  ls
+   28  ls /etc/
+   29  ls /etc/sys*
+   30  ls /etc/systemd/system
+   31  cat /etc/passwd
+   32  ls -l
+   33  cd .asb
+   34  ls
+   35  mkdir configFiles
+   36  ls
+   37  ip a
+   38  history 
+   39  sudo service ssh start
+   40  history 
+   41  ls /tmp/
+   42  ls
+   43  cd configFiles/
+   44  ls
+   45  mv /tmp/asp-app.service ./asb-app.service
+   46  ls
+   47  mv /tmp/asb-socket.service .
+   48  ls
+   49  ls /tmp/
+   50  ls -l
+   51  sudo cp asb-socket.service /etc/systemd/system/
+   52  ls /etc/systemd/system
+   53  ls -l /etc/systemd/system
+   54  clear
+   55  history 
+   56  sudo systemctl enable asb-socket.service 
+   57  sudo systemctl start asb-socket.service
+   58  sudo systemctl status asb-socket.service
+   59  sudo cp asb-socket.service /etc/systemd/system/
+   60  sudo systemctl enable asb-socket.service 
+   61  sudo systemctl start asb-socket.service 
+   62  sudo systemctl status asb-socket.service 
+   63  sudo cp asb-app.service /etc/systemd/system/
+   64  ls /etc/systemd/system
+   65  sudo systemctl enable asb-app.service 
+   66  sudo systemctl start asb-app.service 
+   67  sudo systemctl status asb-app.service 
+   68  ls /tmp/
+   69  mv /tmp/chromium-browser-appASB.desktop .
+   70  ls
+   71  ls -l
+   72  chromium-browser --password-store=basic %U --start-maximized --app=http://localhost:5055
+   73  ls /etc/
+   74  ls /etc/rc*
+   75  ls /etc/rc.*
+   76  cat /etc/rc.local 
+   77  history 
+   78  sudo nano /etc/rc.local 
+   79  history > ./../histCmd/hist20211006-2
+   80  cat ./../histCmd/hist20211006-2
+   81  sudo nano /etc/rc.local 
+   82  cat nano /etc/rc.local 
+   83  sudo reboot
+   84  nano /etc/rc.local 
+   85  sudo nano /etc/rc.local 
+   86  cd .asb/
+   87  ls
+   88  cd configFiles/
+   89  ls
+   90  nano asb-app-chromium.desktop
+   91  cat asb-app-chromium.desktop 
+   92  ls /home/pi/.config/
+   93  mkdir /home/pi/.config/autostart
+   94  ls /home/pi/.config/
+   95  cp asb-app-chromium.desktop /home/pi/.config/autostart/
+   96  ls /home/pi/.config/autostart/
+   97  history > ./../histCmd/hist20211006-4
