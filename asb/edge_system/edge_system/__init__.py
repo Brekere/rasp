@@ -36,5 +36,6 @@ app.register_blueprint(home)
 app.register_blueprint(fauth)
 
 
-## create the database 
-db.create_all()
+## create the database
+with app.app_context():
+    db.create_all()

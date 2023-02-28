@@ -3,8 +3,8 @@ class BaseConfig(object):
     SECRET_KEY = 'Key5&6423v-daD2?s'
     DEBUG = True
     TESTING = False
-    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://agg:db.#As4kL@localhost:3306/historic"
-    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:asb.#21@localhost:3306/historic"
+    SQLALCHEMY_DATABASE_URI = "mssql+pyodbc://DESKTOP-AQ2ALR2/asb?driver=ODBC Driver 17 for SQL Server"
+    #SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:asb.#21@localhost:3306/historic"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECRET_KEY = 'secret!'
 class ProductionConfig(BaseConfig):
