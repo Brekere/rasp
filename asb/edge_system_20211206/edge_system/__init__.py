@@ -23,4 +23,5 @@ app.register_blueprint(home)
 
 
 ## create the database 
-db.create_all()
+with app.app_context():
+    db.create_all()
