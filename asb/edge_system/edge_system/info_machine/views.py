@@ -60,20 +60,20 @@ def machine_register():
             flash('Machine already registered!')
             return redirect(url_for('machine.machine_register'))
         #form.path_image.data = 'img/tmp_workstation_01.jpeg'
-        machine_ =  Machine(id=form.id.data,
-        nickname=form.nickname.data,
-        description=form.description.data,
-        brand=form.brand.data,
-        model=form.model.data,
-        voltage=form.voltage.data,
-        amperage=form.amperage.data,
-        serie=form.serie.data,
-        id_line=form.id_line.data,
-        manufacturing_date=form.manufacturing_date.data,
-        instalation_date=form.instalation_date.data,
-        id_supplier=form.id_supplier.data,
-        run_date=form.run_date.data,
-        path_image= form.path_image.data)
+        machine_ =  Machine(request.form['id'],
+        request.form['nickname'],
+        request.form['description'],
+        request.form['brand'],
+        request.form['model'],
+        request.form['voltage'],
+        request.form['amperage'],
+        request.form['serie'],
+        request.form['id_line'],
+        request.form['manufacturing_date'],
+        request.form['instalation_date'],
+        request.form['id_supplier'],
+        request.form['run_date'],
+        request.form['path_image'])
         print(machine_)
         db.session.add(machine_)
         db.session.commit()
