@@ -107,11 +107,24 @@ def get_data(static_period=None, type_info = None):
         metrics = get_data_reworking_time_from_static_period(static_period) 
     return jsonify(metrics)
 
-@machine.route('/machine/info')
+@machine.route('/machine/info/')
 def info():
-    machine_ = Machine.query.first()
-    print(machine_)
-    return render_template("machine/machine_info.html", machine = machine_)
+    machine = Machine.query.first()
+    print(machine)
+    return render_template("machine/machine_info.html", machine = machine)
+
+@machine.route('/machine/info_all/')
+def info_all():
+    machines = Machine.query.all()
+    print(machines)
+    return render_template("machine/machines_info.html", machines = machines)
+
+@machine.route('/machine/info/<int:id>', methods=['GET'])
+def info_2(id):
+    machine = Machine.query.get_or_404(id)
+    print(machine) 
+    return render_template("machine/machine_info.html", machine = machine)
+
 
 @machine.route('/machine_info')
 def info2():

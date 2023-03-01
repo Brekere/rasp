@@ -90,6 +90,8 @@
     <div id="page-content-wrapper">
       <button class="btn btn-primary" id="sidebarToggle">Metrics Menu</button>
 
+      
+        {%  for machine in machines%}
         <!-- Page content-->
         <div class="jumbotron">
             <div>
@@ -127,6 +129,7 @@
             </tbody>
           </table>
         </div>
+        {% endfor %}
         
     </div>
 </div>
