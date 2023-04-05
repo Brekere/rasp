@@ -1,0 +1,58 @@
+from edge_system import db
+
+from flask_wtf import FlaskForm
+from werkzeug.security import check_password_hash, generate_password_hash
+from wtforms import StringField, PasswordField, HiddenField, IntegerField
+from wtforms.validators import EqualTo, InputRequired
+
+class UsersLogin(db.Model):
+    __tablename__ = 'users'
+    id = db.Column(db.Integer, primary_key = True)
+    username = db.Column(db.String(40))
+    fullname = db.Column(db.String(256))
+    pwhash = db.Column(db.String(256))
+    id_employee = db.Column(db.Integer) # va a tener relación con el id
+    id_role  = db.Column(db.Integer) # Operador, encargado de línea o mantenimiento
+
+    @property
+    def is_authenticated(self):
+        return True
+    
+    @property
+    def is_active(self):
+        return True
+    
+    @property
+    def is_anonymous(self):
+        return False
+
+    def get_id(self):
+        return str(self.id)
+
+    def __init__(self, username, fullname, pwhash, id_employee, id_role):
+        self.username = username
+        self.fullname = fullname
+        self.pwhash = generate_password_hash(pwhash)
+        self.id_employee = id_employee
+        self.id_role = id_role
+        pass
+
+    def __repr__(self):
+        return 'User : %r' % (self.username)
+
+    def check_password(self, password):
+        return check_password_hash(self.pwhash, password)
+
+class RegisterForm(FlaskForm):
+    username = StringField('User', validators = [InputRequired()])
+    password = PasswordField('Password', validators = [InputRequired()])
+    fullname = StringField('Full name', validators = [InputRequired()])
+    id_employee = IntegerField('Employee id', validators = [InputRequired()])
+    id_role  = IntegerField('Role id', validators = [InputRequired()])
+    confirm  = PasswordField('Repeat password')
+
+
+class LoginForm(FlaskForm):
+    username = StringField('User', validators = [InputRequired()])
+    password = PasswordField('Password', validators = [InputRequired()])
+    next = HiddenField('next')

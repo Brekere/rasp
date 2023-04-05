@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=ASB-Web
+Exec=chromium-browser --password-store=basic %U --start-maximized --app=http://localhost:5055

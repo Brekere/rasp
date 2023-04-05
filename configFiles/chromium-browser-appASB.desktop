@@ -1,0 +1,32 @@
+[Desktop Entry]
+Version=0.1
+Name=Chromium Web Browser ASB app
+GenericName=Web Browser ASB app
+Comment=Access the Internet
+
+Exec=chromium-browser --password-store=basic %U
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=chromium-browser
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml_xml;x-scheme-handler/http;x-scheme-handler/https;
+StartupNotify=true
+Actions=NewWindow;Incognito;TempProfile;
+X-AppInstall-Package=chromium-browser
+
+Name[es_MX]=chromium-browser-appASB.desktop
+
+[Desktop Action NewWindow]
+Name=Open a New Window
+
+Exec=chromium-browser --password-store=basic
+
+[Desktop Action Incognito]
+Name=Open a New Window in incognito mode
+
+Exec=chromium-browser --password-store=basic --incognito
+
+[Desktop Action TempProfile]
+Name=Open a New Window with a temporary profile
+Exec=chromium-browser --password-store=basic --temp-profile

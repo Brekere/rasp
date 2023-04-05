@@ -1,0 +1,15 @@
+[Unit]
+Description=ASB App Visualization
+[Service]
+Type=simple
+PIDFile=/run/asbapp.pid
+ExecStart=/bin/bash -c "python3 /home/pi/.asb/asb/edge_system/run.py"
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/.asb/asb/edge_system
+Restart=always
+RestartSec=10
+[Install]
+WantedBy=multi-user.target
+
+#ExecStart=/bin/bash -c "source /home/arturo/.virtualenvs/py3cv4/bin/activate;python /home/arturo/Documentos/asb/edge_system/run.py"

@@ -1,0 +1,42 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h2> Ingresa los datos solicitados </h2>
+   <form action="{{ url_for('fauth.register')}}" method= "POST">
+
+        <div class="form-group">
+            {{ form.fullname.label }} 
+            {{ form.fullname(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.id_employee.label }} 
+            {{ form.id_employee(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.id_role.label }} 
+            {{ form.id_role(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.username.label }} 
+            {{ form.username(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.password.label }} 
+            {{ form.password(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.confirm.label }} 
+            {{ form.confirm(class="form-control") }}
+        </div>
+       <input class="btn btn-success" type="submit" value="Enviar">
+   </form>
+</div>
+
+{% endblock %}

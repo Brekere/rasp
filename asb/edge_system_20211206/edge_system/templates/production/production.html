@@ -1,0 +1,126 @@
+{% extends 'layout/base_plots.html' %}
+
+<!--
+{% block head %}
+<script src="{{ url_for('static',filename='js/agg.js')}}" type="module"> </script>
+{% endblock %}
+-->
+
+
+{% block content %}
+
+{% if info == "OK-NOK" %}
+<!--
+    Display data for OK/NOK records
+-->
+
+<div class="jumbotron">
+    <h1>Production information {{mode}} for {{info}} data</h1>
+    <h2 style="display:inline;">&emsp; &emsp;Metrics</h2>
+    <!--
+      <h5 id="period" style="display:inline;"></h5>
+    -->
+    <h4 id="info_metrics" ></h4>
+
+    <canvas id="myCanvas" width="400" height="100"></canvas>
+    
+    <script> 
+        window.metrics2 = {'tot_ok': 0, 'tot_nok': 0, 'date_start': '?', 'date_end': '?'};
+             
+      get_draw_ok_nok( {{mode| tojson }}, {{info | tojson }} );
+      setInterval(function(){
+        get_draw_ok_nok( {{mode| tojson }}, {{info | tojson }} );
+          console.log("setInterval");
+        }, 5000);
+    </script>
+</div>
+
+{% elif info == "Working-Time" %}
+
+<!--
+    Display data for time records
+-->
+
+<div class="jumbotron">
+    <h1>Production information {{mode}} for {{info}} data</h1>
+    <h2 style="display:inline;">&emsp; &emsp;Metrics</h2>
+    
+    <h4 id="info_metrics" ></h4>
+    
+    <canvas id="myCanvasTime" width="400" height="150"></canvas>
+    <script>
+        // Line chart
+        window.metrics2 = {'tot_ok': 0, 'tot_nok': 0, 'date_start': '?', 'date_end': '?', 
+        'avg': 0.0, 'std': 0.0, 'min': 0, 'max': 0,
+        'data': {'id': [], 'working_time': []}};
+        //window.data = 
+        if (window.metrics2.data['id'].length == 0){
+          console.log('No data!!! ')
+        }
+
+        get_draw_working_time( {{mode| tojson }}, {{info | tojson }} );
+      setInterval(function(){
+        get_draw_working_time( {{mode| tojson }}, {{info | tojson }} );
+          console.log("setInterval")
+        }, 5000);
+    
+    </script>
+</div>
+
+{% elif info == "Rework" %}
+
+<div class="jumbotron">
+  <h1>Production information {{mode}} for {{info}} data</h1>
+  <h2 style="display:inline;">&emsp; &emsp;Metrics</h2>
+  
+  <h4 id="info_metrics" ></h4> 
+
+  <canvas id="myCanvas" width="400" height="100"></canvas>
+    
+    <script> 
+        window.metrics2 = {'tot_ok': 0, 'tot_nok': 0, 'date_start': '?', 'date_end': '?'};
+             
+      get_draw_ok_nok( {{mode| tojson }}, {{info | tojson }} );
+      setInterval(function(){
+        get_draw_ok_nok( {{mode| tojson }}, {{info | tojson }} );
+          console.log("setInterval");
+        }, 5000);
+    </script>
+
+</div>
+
+{% else %}
+
+<div class="jumbotron">
+  <h1>Production information {{mode}} for {{info}} data</h1>
+  <h2 style="display:inline;">&emsp; &emsp;Metrics</h2>
+  
+  <h4 id="info_metrics" ></h4>
+  
+  <canvas id="myCanvasTime" width="400" height="150"></canvas>
+    <script>
+        // Line chart
+        window.metrics2 = {'tot_ok': 0, 'tot_nok': 0, 'date_start': '?', 'date_end': '?', 
+        'avg': 0.0, 'std': 0.0, 'min': 0, 'max': 0,
+        'data': {'id': [], 'working_time': []}};
+        //window.data = 
+        if (window.metrics2.data['id'].length == 0){
+          console.log('No data!!! ')
+        }
+
+        get_draw_working_time( {{mode| tojson }}, {{info | tojson }} );
+      setInterval(function(){
+        get_draw_working_time( {{mode| tojson }}, {{info | tojson }} );
+          console.log("setInterval")
+        }, 5000);
+    
+    </script>
+
+</div>
+
+
+{% endif %}
+
+
+
+{% endblock %}

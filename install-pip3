@@ -1,0 +1,3 @@
+  280  pip3 install -U Flask-SQLAlchemy
+  282  pip3 install pymysql
+  342  history | grep "pip3 install" > install-pip3

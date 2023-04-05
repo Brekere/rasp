@@ -1,0 +1,70 @@
+    1  python --version
+    2  python3 --version
+    3  gcc --version
+    4  g++ --version
+    5  uname -a
+    6  apt update
+    7  sudo apt update
+    8  sudo apt upgrade
+    9  pwd
+   10  ls
+   11  cd ~
+   12  sudo mysql -u root -p
+   13  ls
+   14  cd edge_system/
+   15  ls
+   16  nano configuration.py 
+   17  python3 run.py 
+   18  ls
+   19  ls /etc/
+   20  ls /etc/sys*
+   21  ls /etc/systemd/system
+   22  cat /etc/passwd
+   23  ls -l
+   24  cd .asb
+   25  ls
+   26  mkdir configFiles
+   27  ls
+   28  ip a
+   29  history 
+   30  sudo service ssh start
+   31  history 
+   32  ls /tmp/
+   33  ls
+   34  cd configFiles/
+   35  ls
+   36  mv /tmp/asp-app.service ./asb-app.service
+   37  ls
+   38  mv /tmp/asb-socket.service .
+   39  ls
+   40  ls /tmp/
+   41  ls -l
+   42  sudo cp asb-socket.service /etc/systemd/system/
+   43  ls /etc/systemd/system
+   44  ls -l /etc/systemd/system
+   45  clear
+   46  history 
+   47  sudo systemctl enable asb-socket.service 
+   48  sudo systemctl start asb-socket.service
+   49  sudo systemctl status asb-socket.service
+   50  sudo cp asb-socket.service /etc/systemd/system/
+   51  sudo systemctl enable asb-socket.service 
+   52  sudo systemctl start asb-socket.service 
+   53  sudo systemctl status asb-socket.service 
+   54  sudo cp asb-app.service /etc/systemd/system/
+   55  ls /etc/systemd/system
+   56  sudo systemctl enable asb-app.service 
+   57  sudo systemctl start asb-app.service 
+   58  sudo systemctl status asb-app.service 
+   59  ls /tmp/
+   60  mv /tmp/chromium-browser-appASB.desktop .
+   61  ls
+   62  ls -l
+   63  chromium-browser --password-store=basic %U --start-maximized --app=http://localhost:5055
+   64  ls /etc/
+   65  ls /etc/rc*
+   66  ls /etc/rc.*
+   67  cat /etc/rc.local 
+   68  history 
+   69  sudo nano /etc/rc.local 
+   70  history > ./../histCmd/hist20211006-2

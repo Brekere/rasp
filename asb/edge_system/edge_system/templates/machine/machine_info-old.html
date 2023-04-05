@@ -1,0 +1,45 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+
+<div class="jumbotron">
+    <div>
+        <h1 class="display-4"> <img src="{{ url_for('static',filename=machine.file)}}" height="150"> 
+            {{machine.nickname}} Machine</h1>
+    </div>
+  <table class="blueTable"> 
+    <thead>
+    <tr>
+        <th>Element</th>
+        <th>Data</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Description</td>
+            <td>{{machine.description}}</td>
+        </tr>
+        <tr>
+            <td>Voltage</td>
+            <td>{{machine.voltage}}</td>
+        </tr>
+        <tr>
+            <td>Amperage</td>
+            <td>{{machine.amperage}}</td>
+        </tr>
+        <tr>
+            <td>Nickname</td>
+            <td>{{machine.id_line}}</td>
+        </tr>
+        <tr>
+            <td>Run date</td>
+            <td>{{machine.run_date}}</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+{% endblock %}

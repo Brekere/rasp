@@ -1,0 +1,15 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h2> Actualiza los datos de la maquina </h2>
+   <form action="{{ url_for('machine.machine_update', id=machine.id)}}" method="POST" enctype="multipart/form-data">
+    
+    {%include 'machine/_form.html'%}
+
+       <input class="btn btn-success" type="submit" value="Actualizar">
+   </form>
+</div>
+
+{% endblock %}

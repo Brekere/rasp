@@ -1,0 +1,46 @@
+{% extends 'layout/base_plots.html' %}
+
+{% block content %}
+
+
+<div class="jumbotron">
+  <!--
+    <h1>Production information {{mode}} for {{info}}</h1>
+
+    <h2 style="display:inline;">&emsp; &emsp;Metrics</h2>
+    <h5 style="display:inline;">&emsp; Period: {{metrics['date_start']}} to {{metrics['date_end']}}</h5>
+    <h4>Total of OK parts: {{metrics['tot_ok']}} &emsp; Total of NOK parts: {{metrics['tot_nok']}} </h4>
+
+    <canvas id="myCanvas" width="400" height="100"></canvas>
+
+
+  -->
+  <button onclick="myFunction()">Click me</button>
+    <script type="text/javascript" charset="utf-8">
+        
+        const RAPIDAPI_API_URL = 'http://localhost:5055/get_data';
+        const RAPIDAPI_REQUEST_HEADERS = {
+          'X-RapidAPI-Host': 'arjunkomath-jaas-json-as-a-service-v1.p.rapidapi.com'
+          , 'X-RapidAPI-Key': '7xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+          , 'Content-Type': 'application/json'
+        };
+
+        setInterval(function(){
+          myFunction();
+        }, 5000);
+
+        function myFunction(){
+          axios.get(`${RAPIDAPI_API_URL}`, { headers: RAPIDAPI_REQUEST_HEADERS })
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => console.error('On get student error', error))
+        }
+    </script>
+</div>
+
+
+
+
+
+{% endblock %}
