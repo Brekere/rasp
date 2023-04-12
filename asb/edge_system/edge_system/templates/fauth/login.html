@@ -7,17 +7,17 @@
         <h2 class="text-center">Login</h3>
     <form action="{{ url_for('fauth.login')}}" method= "POST">
         
-            <div class="form-group">
+
                 {{ form.username.label }} 
                 {{ form.username(class="form-control") }}
-            </div>
 
-            <div class="form-group">
                 {{ form.password.label }} 
                 {{ form.password(class="form-control") }}
-            </div>
 
-            {{ form.next() }}
+                {{ form.csrf_token }}
+
+                {{ form.next() }}
+                
             <div class="clearfix">
                 <input class="btn btn-success float-right" type="submit" value="Enviar">
             </div>

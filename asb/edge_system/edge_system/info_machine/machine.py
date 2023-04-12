@@ -10,7 +10,7 @@ import os
 
 from edge_system import db, ALLOWED_EXTENSIONS_FILE, app
 from edge_system.info_machine.model.machine import Machine, RegisterForm
-from edge_system.info_machine.model.part_info import Part
+from edge_system.info_machine.model.part_info import Part, PartForm
 from edge_system.info_machine.model.rework_part_info import ReworkPart
 
 def get_machine_info_json():
@@ -58,11 +58,11 @@ def fill_machine_register_json():
 @machine.route('/machine/register', methods=['POST', 'GET'])
 def machine_register():
     form = RegisterForm() #meta={'csrf': False}
+
     if form.validate_on_submit():
         if Machine.query.get(form.id.data):
             flash('Machine already registered!')
             return redirect(url_for('machine.machine_register'))
-        #form.file.data = 'img/tmp_workstation_01.jpeg'
         machine_ =  Machine(
         request.form['id'],
         request.form['nickname'],
@@ -89,7 +89,7 @@ def machine_register():
         db.session.add(machine_)
         db.session.commit()
         flash("Machine information saved locally!!")
-        return redirect(url_for('home.home_page'))
+        return redirect(url_for('machine.info_all'))
     if form.errors:
         flash(form.errors, 'danger')
     return render_template('machine/register.html', form = form)
@@ -141,7 +141,7 @@ def machine_update(id):
         db.session.add(machine)
         db.session.commit()
         flash("Maquina actualizada con exito")
-        return redirect(url_for('machine.machine_update', id=machine.id))
+        return redirect(url_for('machine.info_all', id=machine.id))
 
     if form.errors:
         flash(form.errors, 'danger')

@@ -1,16 +1,16 @@
 from edge_system import db
-
 from flask_wtf import FlaskForm
-from wtforms import StringField, DateField, IntegerField, DecimalField
+from wtforms import StringField, DateField, IntegerField, DecimalField, HiddenField
 from wtforms.validators import InputRequired
 from flask_wtf.file import FileField, FileRequired
+
 
 class Machine(db.Model):
     """
     Class tha contain the information of the machine (For local database ...)
     """
     __tablename__ = "machines"
-    id = db.Column(db.Integer, primary_key = True, autoincrement=False)
+    id = db.Column(db.Integer, primary_key = True)
     nickname = db.Column(db.String(45))
     description = db.Column(db.String(256))
     brand = db.Column(db.String(64))
@@ -24,7 +24,7 @@ class Machine(db.Model):
     id_supplier = db.Column(db.Integer)
     run_date = db.Column(db.DateTime)
     file = db.Column(db.String(256))
-    
+    parts = db.relationship('Part', backref='machine', lazy='select')
 
     def __init__(self, id, nickname, description, brand, model, voltage, amperage, serie, id_line, manufacturing_date, 
     instalation_date, id_supplier, run_date, file):
@@ -47,7 +47,7 @@ class Machine(db.Model):
         return '<Machine: {}>'.format(self.nickname)
 
 class RegisterForm(FlaskForm):
-    id = IntegerField('Machine id', validators = [InputRequired()])
+    id = IntegerField('Id', validators = [InputRequired()])
     nickname = StringField('Nickname', validators = [InputRequired()])
     description = StringField('Description', validators = [InputRequired()])
     brand = StringField('Brand', validators = [InputRequired()])

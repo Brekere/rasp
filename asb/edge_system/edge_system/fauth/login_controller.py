@@ -17,7 +17,7 @@ def load_user(user_id):
 
 @fauth.route('/users/register', methods=['GET', 'POST'])
 def register():
-    form = RegisterForm(meta={'csrf': False})
+    form = RegisterForm() #meta={'csrf': False}
     if form.validate_on_submit():
         if UsersLogin.query.filter_by(id_employee = form.id_employee.data).first():
             flash("Employee already registered!!")
@@ -40,7 +40,7 @@ def login():
     if current_user.is_authenticated:
         flash('User already authenticated')
         return redirect(url_for('home.home_page'))
-    form = LoginForm(meta={'csrf': False})
+    form = LoginForm() #meta={'csrf': False}
     if form.validate_on_submit():
         user = UsersLogin.query.filter_by(username = form.username.data).first()
         if user and user.check_password(form.password.data):

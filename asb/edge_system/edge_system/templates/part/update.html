@@ -1,0 +1,15 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h2> Actualiza los datos de la parte </h2>
+   <form action="{{ url_for('part.part_update', id=part.id)}}" method="POST" enctype="multipart/form-data">
+    
+    {%include 'part/_form.html'%}
+
+       <input class="btn btn-success" type="submit" value="Actualizar">
+   </form>
+</div>
+
+{% endblock %}

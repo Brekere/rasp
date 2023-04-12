@@ -37,14 +37,15 @@ def rol_admin_need(f):
 
 
 ## import views
-from edge_system.info_machine.views import machine
+from edge_system.info_machine.machine import machine
+from edge_system.info_machine.part import part
 from edge_system.home.views import home
 from edge_system.fauth.login_controller import fauth
 
 app.register_blueprint(machine)
 app.register_blueprint(home)
 app.register_blueprint(fauth)
-
+app.register_blueprint(part)
 
 ## create the database
 with app.app_context():

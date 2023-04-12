@@ -1,0 +1,15 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h2> Ingresa los datos de la pieza </h2>
+   <form action="{{ url_for('part.part_register')}}" method="POST" enctype="multipart/form-data">
+    
+    {%include 'part/_form.html'%}
+
+       <input class="btn btn-success" type="submit" value="Enviar">
+   </form>
+</div>
+
+{% endblock %}

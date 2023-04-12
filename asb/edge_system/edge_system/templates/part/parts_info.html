@@ -95,13 +95,13 @@
       <button class="btn btn-primary" id="sidebarToggle">Metrics Menu</button>
 
       
-        {%  for machine in machines%}
+        {% for part in parts %}
         <!-- Page content-->
         <div class="jumbotron">
             <div>
-                <h1 class="display-4"> <img src="{{ url_for('static',filename="/uploads/"+machine.file)}}" height="150"> {{machine.nickname}} Machine</h1>
-                <a data-toggle="tooltip" data-placement="top" data-title="Editar" class="btn btn-success btn-sm" href="{{ url_for('machine.machine_update', id=machine['id']) }}"><i class="fa fa-edit"></i></a>
-                <a data-toggle="tooltip" data-placement="top" data-title="Eliminar" class="btn btn-danger btn-sm" href="{{ url_for('machine.machine_delete', id=machine['id']) }}"><i class="fa fa-trash"></i></a>
+                <h1 class="display-4"> {{part.namepart}} Part</h1>
+                <a data-toggle="tooltip" data-placement="top" data-title="Editar" class="btn btn-success btn-sm" href="{{ url_for('part.part_update', id=part['id']) }}"><i class="fa fa-edit"></i></a>
+                <a data-toggle="tooltip" data-placement="top" data-title="Eliminar" class="btn btn-danger btn-sm" href="{{ url_for('part.part_delete', id=part['id']) }}"><i class="fa fa-trash"></i></a>
 
             </div>
           <table class="blueTable"> 
@@ -113,24 +113,24 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Description</td>
-                    <td>{{machine.description}}</td>
+                    <td>Id</td>
+                    <td>{{part.id}}</td>
                 </tr>
                 <tr>
-                    <td>Voltage</td>
-                    <td>{{machine.voltage}}</td>
+                  <td>Nombre de parte</td>
+                  <td>{{part.namepart}}</td>
                 </tr>
                 <tr>
-                    <td>Amperage</td>
-                    <td>{{machine.amperage}}</td>
+                    <td>Timestamp</td>
+                    <td>{{part.timestamp}}</td>
                 </tr>
                 <tr>
-                    <td>Nickname</td>
-                    <td>{{machine.id_line}}</td>
+                    <td>Status</td>
+                    <td>{{part.status}}</td>
                 </tr>
                 <tr>
-                    <td>Run date</td>
-                    <td>{{machine.run_date}}</td>
+                    <td>Working Time</td>
+                    <td>{{part.working_time}}</td>
                 </tr>
             </tbody>
           </table>
