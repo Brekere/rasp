@@ -36,12 +36,22 @@ def part_register():
             flash('Part already registered!')
             return redirect(url_for('part.part_register'))
         
-        part_ =  Part(request.form['id'],
-                      request.form['namepart'],
-                      request.form['timestamp'], 
-                      request.form['status'], 
-                      request.form['working_time'], 
-                      request.form['id_machine'])
+        part_ =  Part(
+        request.form['id'],
+        request.form['namepart'],
+        request.form['timestamp'], 
+        request.form['status'], 
+        request.form['working_time'], 
+        request.form['id_machine'],
+        request.form['file'])
+
+        if form.file.data:
+         file = form.file.data
+         if allowed_extensions_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
+            part.file = filename
+
 
         db.session.add(part_)
         db.session.commit()
@@ -69,6 +79,7 @@ def part_update(id):
         form.status.data = part.status
         form.working_time.data = part.working_time
         form.id_machine.data = part.id_machine
+        form.file.data = part.file
         
     if form.validate_on_submit():
         # actualizar un registro
@@ -78,11 +89,18 @@ def part_update(id):
         part.status = form.status.data
         part.working_time = form.working_time.data
         part.id_machine = form.id_machine.data
+
+        if form.file.data:
+         file = form.file.data
+         if allowed_extensions_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
+            part.file = filename
         
         db.session.add(part)
         db.session.commit()
         flash("Parte actualizada con exito")
-        return redirect(url_for('part.info_all', id=part.id))
+        return redirect(url_for('part.part_info_all', id=part.id))
 
     if form.errors:
         flash(form.errors, 'danger')

@@ -996,3 +996,9 @@ INFO:root:
 	Socket::  --> starting up on 0.0.0.0 port 10000
 INFO:root:
 	Socket loop::  --> waiting for a connection
+INFO:root:
+	 Starting (or re-starting) app at 17/04/2023 14:33:09
+INFO:root:
+	Socket::  --> starting up on 0.0.0.0 port 10000
+INFO:root:
+	Socket loop::  --> waiting for a connection

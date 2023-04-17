@@ -11,7 +11,7 @@ from server_part import app, db
 from server_part.model.part_info import Part
 from server_part.model.rework_part_info import ReworkPart
 
-
+app.run(host='0.0.0.0', port=5055)
 
 def receiveSignal(signalNumber, frame):
     current_time = dtime.datetime.now()

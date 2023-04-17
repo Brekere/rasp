@@ -16,15 +16,16 @@ class Part(db.Model):
     status = db.Column(db.String(255))
     working_time = db.Column(db.Integer)
     id_machine = db.Column(db.Integer, db.ForeignKey('machines.id'), nullable=False) #db.Column(db.Integer, db.ForeignKey('categories.id'), nullable=False)
+    file = db.Column(db.String(256))
 
-
-    def __init__(self, id, namepart, timestamp, status, working_time, id_machine):
+    def __init__(self, id, namepart, timestamp, status, working_time, id_machine, file):
         self.id = id
         self.namepart = namepart
         self.timestamp = timestamp
         self.status = status
         self.working_time = working_time
         self.id_machine = id_machine
+        self.file = file
         
 
     def __repr__(self):
@@ -37,5 +38,6 @@ class PartForm(FlaskForm):
     status = StringField('Status: ', validators=[InputRequired()])
     working_time = IntegerField('Tiempo de trabajo', validators=[InputRequired()])
     id_machine = SelectField('Maquina: ', coerce=int)
+    file = FileField('Archivo')
 
     

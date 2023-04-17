@@ -99,7 +99,9 @@
         <!-- Page content-->
         <div class="jumbotron">
             <div>
-              <h1 class="display-4"> <a href="{{ url_for('part.show', id=part['id']) }}">{{ part['namepart'] }}</a></h1>
+                <h1 class="display-4"> <img src="{{ url_for('static',filename="/uploads/"+part.file)}}" height="150"> <a href="{{ url_for('part.show', id=part['id']) }}">
+                  {{ part['namepart'] }}
+                </a></h1>
                 <a data-toggle="tooltip" data-placement="top" data-title="Editar" class="btn btn-success btn-sm" href="{{ url_for('part.part_update', id=part['id']) }}"><i class="fa fa-edit"></i></a>
                 <a data-toggle="tooltip" data-placement="top" data-title="Eliminar" class="btn btn-danger btn-sm" href="{{ url_for('part.part_delete', id=part['id']) }}"><i class="fa fa-trash"></i></a>
 

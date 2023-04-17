@@ -8,5 +8,6 @@ db = SQLAlchemy(app)
 
 #from server_part.model.part_info import Part
 
-## create the database 
-db.create_all()
+## create the database
+with app.app_context():
+    db.create_all()
