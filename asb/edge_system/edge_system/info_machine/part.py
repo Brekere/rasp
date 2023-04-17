@@ -95,6 +95,11 @@ def part_info_all():
     print(parts)
     return render_template("part/parts_info.html", parts = parts)
 
+@part.route('/part/<int:id>')
+def show(id):
+    part = Part.query.get_or_404(id)
+    return render_template('part/show.html', part=part)
+
 @part.route('/part/delete/<int:id>')
 def part_delete(id):
     part = Part.query.get_or_404(id)

@@ -1,0 +1,43 @@
+{% extends 'layout/base_plots.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <div>
+        <h1 class="display-4"> {{ part['namepart'] }}</h1>
+    </div>
+
+    <table class="blueTable"> 
+        <thead>
+        <tr>
+            <th>Element</th>
+            <th>Data</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Id</td>
+                <td>{{part.id}}</td>
+            </tr>
+            <tr>
+                <td>Timestamp</td>
+                <td>{{part.timestamp}}</td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>{{part.status}}</td>
+            </tr>
+            <tr>
+                <td>Working Time</td>
+                <td>{{part.working_time}}</td>
+            </tr>
+            <tr>
+              <td>id_machine</td>
+              <td>{{part.id_machine}}</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+
+
+{% endblock %}

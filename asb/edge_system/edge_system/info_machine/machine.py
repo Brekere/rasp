@@ -148,6 +148,11 @@ def machine_update(id):
 
     return render_template('machine/update.html', machine=machine, form=form)
 
+@machine.route('/machine/<int:id>')
+def show(id):
+    machine = Machine.query.get_or_404(id)
+    return render_template('machine/show.html', machine=machine)
+
 
 @machine.route('/machine/delete/<int:id>')
 def machine_delete(id):

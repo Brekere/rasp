@@ -83,7 +83,7 @@
         </ul>
         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"></a>
         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/">Home</a>
-        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ url_for('machine.info') }}">Machine Info</a>    
+        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ url_for('machine.info_all') }}">Machine Info</a>    
         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ url_for('machine.machine_register') }}">Registrar maquina</a>
         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ url_for('part.part_register') }}">Registrar pieza</a>
 
@@ -99,7 +99,7 @@
         <!-- Page content-->
         <div class="jumbotron">
             <div>
-                <h1 class="display-4"> {{part.namepart}} Part</h1>
+              <h1 class="display-4"> <a href="{{ url_for('part.show', id=part['id']) }}">{{ part['namepart'] }}</a></h1>
                 <a data-toggle="tooltip" data-placement="top" data-title="Editar" class="btn btn-success btn-sm" href="{{ url_for('part.part_update', id=part['id']) }}"><i class="fa fa-edit"></i></a>
                 <a data-toggle="tooltip" data-placement="top" data-title="Eliminar" class="btn btn-danger btn-sm" href="{{ url_for('part.part_delete', id=part['id']) }}"><i class="fa fa-trash"></i></a>
 
@@ -132,6 +132,10 @@
                     <td>Working Time</td>
                     <td>{{part.working_time}}</td>
                 </tr>
+                <tr>
+                  <td>id_machine</td>
+                  <td>{{part.id_machine}}</td>
+              </tr>
             </tbody>
           </table>
         </div>
