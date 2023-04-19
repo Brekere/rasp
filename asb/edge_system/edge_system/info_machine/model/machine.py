@@ -15,7 +15,7 @@ class Machine(db.Model):
     description = db.Column(db.String(256))
     brand = db.Column(db.String(64))
     model = db.Column(db.String(64))
-    voltage = db.Column(db.Integer)
+    voltage = db.Column(db.Float)
     amperage = db.Column(db.Float)
     serie = db.Column(db.String(45))
     id_line = db.Column(db.Integer) # en la base de datos lo tengo como string, cambiar esto a un entero en la base de datos
@@ -53,7 +53,7 @@ class RegisterForm(FlaskForm):
     brand = StringField('Brand', validators = [InputRequired()])
     model = StringField('Model', validators = [InputRequired()])
     voltage = DecimalField('Voltage', validators = [InputRequired()])
-    amperage = StringField('Amperage', validators = [InputRequired()])
+    amperage = DecimalField('Amperage', validators = [InputRequired()])
     serie = StringField('Serie', validators = [InputRequired()])
     id_line = IntegerField('Line id', validators = [InputRequired()])
     manufacturing_date = DateField('Manufacturing date', validators = [InputRequired()])

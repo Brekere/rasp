@@ -11,7 +11,10 @@
     {{ form.timestamp(class="form-control") }}
 
     {{ form.status.label }} 
-    {{ form.status(class="form-control") }}
+    <select class="form-control" name="status" id="status">
+        <option value="En proceso">En proceso</option>
+        <option value="Finalizado">Finalizado</option>
+    </select>
 
     {{ form.working_time.label }} 
     {{ form.working_time(class="form-control") }}

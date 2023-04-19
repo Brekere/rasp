@@ -3,13 +3,14 @@
 {% block content %}
 
 <div class="jumbotron">
-    <h2> Ingresa los datos de la maquina </h2>
-   <form action="{{ url_for('machine.machine_register')}}" method="POST">
     
-    {%include 'machine/_form.html'%}
+    <h2> Ingresa los datos de la maquina </h2>
+    <form action="{{ url_for('machine.machine_register')}}" method="POST">
 
-       <input class="btn btn-success" type="submit" value="Enviar">
-   </form>
+        {%include 'machine/_form.html'%}
+
+        <input class="btn btn-success" type="submit" value="Enviar">
+    </form>
 </div>
 
 {% endblock %}

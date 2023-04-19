@@ -6,6 +6,7 @@ import numpy as np
 from datetime import date, datetime, timedelta
 from flask_login import login_required
 from werkzeug.utils import redirect, secure_filename
+from sqlalchemy.sql.expression import and_
 import os
 
 from edge_system import db, ALLOWED_EXTENSIONS_FILE, app
@@ -157,13 +158,18 @@ def show(id):
 @machine.route('/machine/delete/<int:id>')
 def machine_delete(id):
     machine = Machine.query.get_or_404(id)
+    part = Part.query.filter(and_(Part.id_machine==id)).all()
 
+    if part:
+        flash("Parte ligada a esta maquina","danger")
+        return redirect(url_for('machine.info_all'))
+    
     db.session.delete(machine)
     db.session.commit()
     flash("Maquina borrada con exito")
-
     return redirect(url_for('machine.info_all'))
-
+    
+    
 @machine.route('/test_get_data')
 def test_get_data():
     data = {'id': [], 'working_time': []}

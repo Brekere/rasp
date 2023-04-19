@@ -125,6 +125,5 @@ def part_delete(id):
     db.session.delete(part)
     db.session.commit()
     flash("parte borrada con exito")
-
     return redirect(url_for('part.part_info_all'))
 

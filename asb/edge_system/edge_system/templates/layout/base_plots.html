@@ -20,10 +20,11 @@
 
   {% include 'fragment/_alert.html' %}
   {% include 'fragment/_nav.html' %}
+  {% include 'fragment/_sidebar.html' %}
 
         {% block content %}
         {% endblock %}
-
+      
     {% include 'fragment/_footer.html' %}
 
     <script src="{{ url_for('static', filename='global/js/jquery.slim.min.js') }}"></script>
