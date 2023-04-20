@@ -2,8 +2,6 @@ import re
 from flask import Blueprint, render_template, flash, url_for, request
 from flask_login import logout_user, login_user, current_user
 from werkzeug.utils import redirect
-
-
 from edge_system import db
 from edge_system.fauth.model.users import LoginForm, UsersLogin, RegisterForm
 from edge_system import login_manager
@@ -20,10 +18,15 @@ def register():
     form = RegisterForm() #meta={'csrf': False}
     if form.validate_on_submit():
         if UsersLogin.query.filter_by(id_employee = form.id_employee.data).first():
-            flash("Employee already registered!!")
+            flash("Employee already registered!!", 'danger')
         else:
-            user = UsersLogin(username=form.username.data, fullname=form.fullname.data, pwhash=form.password.data,
-            id_employee=form.id_employee.data, id_role=form.id_role.data)
+            user = UsersLogin(
+                username=form.username.data, 
+                fullname=form.fullname.data, 
+                pwhash=form.password.data,
+                id_employee=form.id_employee.data, 
+                id_role=form.id_role.data)
+            
             db.session.add(user)
             db.session.commit()
             flash("Successfully registered employee!!")
@@ -37,12 +40,17 @@ def register():
 
 @fauth.route('/users/login', methods=['GET', 'POST'])
 def login():
+
     if current_user.is_authenticated:
         flash('User already authenticated')
         return redirect(url_for('home.home_page'))
+    
     form = LoginForm() #meta={'csrf': False}
+
     if form.validate_on_submit():
+
         user = UsersLogin.query.filter_by(username = form.username.data).first()
+
         if user and user.check_password(form.password.data):
             login_user(user)
             flash('Welcome ' + user.fullname)

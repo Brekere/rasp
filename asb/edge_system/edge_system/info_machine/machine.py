@@ -9,7 +9,7 @@ from werkzeug.utils import redirect, secure_filename
 from sqlalchemy.sql.expression import and_
 import os
 
-from edge_system import db, ALLOWED_EXTENSIONS_FILE, app
+from edge_system import db, ALLOWED_EXTENSIONS_FILE, app, rol_admin_need
 from edge_system.info_machine.model.machine import Machine, RegisterForm
 from edge_system.info_machine.model.part_info import Part, PartForm
 from edge_system.info_machine.model.rework_part_info import ReworkPart
@@ -27,6 +27,7 @@ machine = Blueprint('machine', __name__)
 
 @machine.before_request  # con esto, esta función se ejecuta antes de cada endpoint que tengamos definido en este documento
 @login_required
+@rol_admin_need
 def constructor():
    pass
 
@@ -198,7 +199,7 @@ def get_data(static_period=None, type_info = None):
 def info():
     machine = Machine.query.first()
     print(machine)
-    return render_template("machine/machine_info.html", machine = machine)
+    return render_template("machine/machines_info.html", machine = machine)
 
 @machine.route('/machine/info_all/')
 def info_all():
@@ -210,7 +211,7 @@ def info_all():
 def info_2(id):
     machine = Machine.query.get_or_404(id)
     print(machine) 
-    return render_template("machine/machine_info.html", machine = machine)
+    return render_template("machine/machines_info.html", machine = machine)
 
 
 @machine.route('/machine_info')
@@ -226,7 +227,7 @@ def info2():
         del data_filtered['nickname']
     except:
         print("ERROR")
-    return render_template("machine/machine_info2.html", nickname = nickname, data = data_filtered)
+    return render_template("machine/machines_info.html", nickname = nickname, data = data_filtered)
 
 #### Showing the production 
 

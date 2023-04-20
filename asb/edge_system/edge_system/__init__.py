@@ -11,7 +11,7 @@ CSRFProtect(app)
 
 ## Manejo de imagenes ....
 
-ALLOWED_EXTENSIONS_FILE = set(['pdf','jpg','jpeg','gif','png'])
+ALLOWED_EXTENSIONS_FILE = set(['jpg','jpeg','gif','png'])
 app.config['UPLOAD_FOLDER'] = os.path.realpath('.') + '/edge_system/static/uploads'
 
 ## Database configuration ... 
@@ -29,7 +29,7 @@ login_manager.login_view = "fauth.login"
 def rol_admin_need(f):
     @wraps(f)
     def wrapper(*args, **kwds):
-        if current_user.rol.value != 'Administrador':
+        if current_user.id_role.value != 'Administrador':
             logout_user()
             return redirect(url_for('fauth.login'))
         return f(*args, **kwds)

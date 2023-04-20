@@ -6,6 +6,9 @@
     <h2> Ingresa los datos solicitados </h2>
    <form action="{{ url_for('fauth.register')}}" method= "POST">
 
+            {{ form.username.label }} 
+            {{ form.username(class="form-control") }}
+
             {{ form.fullname.label }} 
             {{ form.fullname(class="form-control") }}
 
@@ -13,10 +16,11 @@
             {{ form.id_employee(class="form-control") }}
 
             {{ form.id_role.label }} 
-            {{ form.id_role(class="form-control") }}
-
-            {{ form.username.label }} 
-            {{ form.username(class="form-control") }}
+            <select class="form-control" name="id_role" id="id_role">
+                <option value="operador">Operador</option>
+                <option value="linea">Encargado de linea</option>
+                <option value="mtto">Mantenimiento</option>
+            </select>
 
             {{ form.password.label }} 
             {{ form.password(class="form-control") }}
