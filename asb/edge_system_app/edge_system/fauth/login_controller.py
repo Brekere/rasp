@@ -57,7 +57,7 @@ def login():
             next = request.form['next']
             #if not is_safe_url(next):
             #    return abort(400)
-            return redirect(next or url_for('machine.info'))
+            return redirect(next or url_for('machine.info_all'))
         else:
             flash('Error: Wrong password or user', 'danger')
             return redirect(url_for('fauth.login'))
