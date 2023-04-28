@@ -31,16 +31,16 @@
                     <td>{{part.id}}</td>
                 </tr>
                 <tr>
-                  <td>Nombre de parte</td>
-                  <td>{{part.namepart}}</td>
-                </tr>
-                <tr>
                     <td>Timestamp</td>
                     <td>{{part.timestamp}}</td>
                 </tr>
                 <tr>
-                    <td>Status</td>
-                    <td>{{part.status}}</td>
+                    <td>OK</td>
+                    <td>{{part.OK}}</td>
+                </tr>
+                <tr>
+                  <td>NOK</td>
+                  <td>{{part.NOK}}</td>
                 </tr>
                 <tr>
                     <td>Working Time</td>
@@ -48,7 +48,7 @@
                 </tr>
                 <tr>
                   <td>id_machine</td>
-                  <td>{{part.id_machine}}</td>
+                  <td><a href="{{ url_for('machine.show', id=part['id_machine']) }}">{{part.id_machine}}</a></td>
               </tr>
             </tbody>
           </table>

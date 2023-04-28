@@ -20,12 +20,11 @@ def register():
         if UsersLogin.query.filter_by(id_employee = form.id_employee.data).first():
             flash("Employee already registered!!", 'danger')
         else:
-            user = UsersLogin(
-                username=form.username.data, 
-                fullname=form.fullname.data, 
-                pwhash=form.password.data,
-                id_employee=form.id_employee.data, 
-                id_role=form.id_role.data)
+            user = UsersLogin(request.form['username'],
+                              request.form['fullname'], 
+                              request.form['password'],
+                              request.form['id_employee'],
+                              request.form['id_role'])
             
             db.session.add(user)
             db.session.commit()

@@ -65,21 +65,20 @@ def machine_register():
         if Machine.query.get(form.id.data):
             flash('Machine already registered!')
             return redirect(url_for('machine.machine_register'))
-        machine_ =  Machine(
-        request.form['id'],
-        request.form['nickname'],
-        request.form['description'],
-        request.form['brand'],
-        request.form['model'],
-        request.form['voltage'],
-        request.form['amperage'],
-        request.form['serie'],
-        request.form['id_line'],
-        request.form['manufacturing_date'],
-        request.form['instalation_date'],
-        request.form['id_supplier'],
-        request.form['run_date'],
-        request.form['file'])
+        machine_ =  Machine(request.form['id'],
+                            request.form['nickname'],
+                            request.form['description'],
+                            request.form['brand'],
+                            request.form['model'],
+                            request.form['voltage'],
+                            request.form['amperage'],
+                            request.form['serie'],
+                            request.form['id_line'],
+                            request.form['manufacturing_date'],
+                            request.form['instalation_date'],
+                            request.form['id_supplier'],
+                            request.form['run_date'],
+                            request.form['file'])
 
         if form.file.data:
          file = form.file.data
@@ -162,7 +161,7 @@ def machine_delete(id):
     part = Part.query.filter(and_(Part.id_machine==id)).all()
 
     if part:
-        flash("Parte ligada a esta maquina","danger")
+        flash("Partes fabricadas con esta maquina","danger")
         return redirect(url_for('machine.info_all'))
     
     db.session.delete(machine)

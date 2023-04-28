@@ -36,14 +36,14 @@ def part_register():
             flash('Part already registered!')
             return redirect(url_for('part.part_register'))
         
-        part_ =  Part(
-        request.form['id'],
-        request.form['namepart'],
-        request.form['timestamp'], 
-        request.form['status'], 
-        request.form['working_time'], 
-        request.form['id_machine'],
-        request.form['file'])
+        part_ =  Part(request.form['id'],
+                      request.form['namepart'],
+                      request.form['timestamp'], 
+                      request.form['OK'],
+                      request.form['NOK'], 
+                      request.form['working_time'], 
+                      request.form['id_machine'],
+                      request.form['file'])
 
         if form.file.data:
          file = form.file.data
@@ -76,7 +76,8 @@ def part_update(id):
         form.id.data = part.id
         form.namepart.data = part.namepart
         form.timestamp.data = part.timestamp
-        form.status.data = part.status
+        form.OK.data = part.OK
+        form.NOK.data = part.NOK
         form.working_time.data = part.working_time
         form.id_machine.data = part.id_machine
         form.file.data = part.file
@@ -86,7 +87,8 @@ def part_update(id):
         part.id = form.id.data
         part.namepart = form.namepart.data
         part.timestamp = form.timestamp.data
-        part.status = form.status.data
+        part.OK = form.OK.data
+        part.NOK = form.NOK.data
         part.working_time = form.working_time.data
         part.id_machine = form.id_machine.data
 

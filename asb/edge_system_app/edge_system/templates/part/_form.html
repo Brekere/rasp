@@ -10,11 +10,11 @@
     {{ form.timestamp.label }} 
     {{ form.timestamp(class="form-control") }}
 
-    {{ form.status.label }} 
-    <select class="form-control" name="status" id="status">
-        <option value="OK">OK</option>
-        <option value="NOK">NOK</option>
-    </select>
+    {{ form.OK.label }}
+    {{ form.OK(class="form-control") }}
+
+    {{ form.NOK.label }}
+    {{ form.NOK(class="form-control") }}
 
     {{ form.working_time.label }} 
     {{ form.working_time(class="form-control") }}

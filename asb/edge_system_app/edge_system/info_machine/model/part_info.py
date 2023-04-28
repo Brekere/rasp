@@ -13,16 +13,18 @@ class Part(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     namepart = db.Column(db.String(255))
     timestamp = db.Column(db.DateTime)
-    status = db.Column(db.String(255))
+    OK = db.Column(db.Integer)
+    NOK = db.Column(db.Integer)
     working_time = db.Column(db.Integer)
-    id_machine = db.Column(db.Integer, db.ForeignKey('machines.id'), nullable=False) #db.Column(db.Integer, db.ForeignKey('categories.id'), nullable=False)
+    id_machine = db.Column(db.Integer, db.ForeignKey('machines.id'), nullable=False)
     file = db.Column(db.String(256))
 
-    def __init__(self, id, namepart, timestamp, status, working_time, id_machine, file):
+    def __init__(self, id, namepart, timestamp, OK, NOK, working_time, id_machine, file):
         self.id = id
         self.namepart = namepart
         self.timestamp = timestamp
-        self.status = status
+        self.OK = OK
+        self.NOK = NOK
         self.working_time = working_time
         self.id_machine = id_machine
         self.file = file
@@ -35,9 +37,10 @@ class PartForm(FlaskForm):
     id = IntegerField('Id: ', validators=[InputRequired()])
     namepart = StringField('Nombre: ', validators=[InputRequired()])
     timestamp = DateField('Fecha', validators=[InputRequired()])
-    status = StringField('Status: ', validators=[InputRequired()])
+    OK = IntegerField('OK: ') #, validators=[InputRequired()]
+    NOK = IntegerField('NOK: ')#, validators=[InputRequired()]
     working_time = IntegerField('Tiempo de trabajo', validators=[InputRequired()])
-    id_machine = SelectField('Maquina: ', coerce=int)
+    id_machine = SelectField('Identificador de la maquina: ', coerce=int)
     file = FileField('Archivo')
 
     
