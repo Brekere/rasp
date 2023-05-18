@@ -1,0 +1,43 @@
+{% extends 'layout/base_plots.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <div>
+        <h1 class="display-4">{{ user['username'] }}</h1>
+    </div>
+
+<table class="blueTable">
+    <thead>
+        <tr>
+            <th>Element</th>
+            <th>Data</th>
+        </tr>
+        </thead> 
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td>{{user.id}}</td>
+        </tr>
+        <tr>
+            <td>Username</td>
+            <td>{{user.username}}</td>
+        </tr>
+        <tr>
+            <td>Fullname</td>
+            <td>{{user.fullname}}</td>
+        </tr>
+        <tr>
+            <td>id employee</td>
+            <td>{{user.id_employee}}</td>
+        </tr>
+        <tr>
+            <td>id role</td>
+            <td>{{user.id_role.value}}</td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+
+{% endblock %}

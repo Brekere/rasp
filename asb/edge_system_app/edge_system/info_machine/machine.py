@@ -38,7 +38,7 @@ def allowed_extensions_file(filename):
 def fill_machine_register_json():
     data_json = get_machine_info_json()
     form = RegisterForm() #meta={'csrf': False}
-    form.id.data = 13
+    form.id.data = data_json['id']
     form.file.data = 'img/tmp_workstation_01.jpeg'
     form.nickname.data = data_json['nickname']
     form.description.data = data_json['description']
@@ -65,7 +65,7 @@ def machine_register():
         if Machine.query.get(form.id.data):
             flash('Machine already registered!')
             return redirect(url_for('machine.machine_register'))
-        machine_ =  Machine(request.form['id'],
+        machine =  Machine(request.form['id'],
                             request.form['nickname'],
                             request.form['description'],
                             request.form['brand'],
@@ -87,7 +87,7 @@ def machine_register():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
             machine.file = filename
 
-        db.session.add(machine_)
+        db.session.add(machine)
         db.session.commit()
         flash("Machine information saved locally!!")
         return redirect(url_for('machine.info_all'))

@@ -3948,6 +3948,7 @@ textarea.form-control-lg {
 }
 .nav-link:hover, .nav-link:focus {
   color: #0a58ca;
+  background-color: #e9ecef;
 }
 .nav-link.disabled {
   color: #6c757d;
@@ -11314,4 +11315,78 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
   body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     margin-left: -15rem;
   }
+}
+
+.control{
+  background-color: rgba(0, 0, 255, 0.1);
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.boton{
+  border: 1px solid #000000;
+  display: inline-block;
+  padding: 10px 10px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border-radius: 15px;
+}
+
+.boton:hover {
+  background-color: #3e8e41;
+  text-decoration: none;
+  color: #000000;
+}
+
+.boton:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.inicio{
+  width: 100%;
+}
+
+.inicio:hover{
+
+}
+
+.paro{
+  width: 100%;
+  background-color: #ff0000;
+}
+
+.paro:hover{
+  background-color: #cc0000;
+}
+
+.luzon{
+  width: 50%;
+  float: left;
+  background-color: #ffcc33;
+}
+
+.luzon:hover{
+  background-color: #cccc33;
+}
+
+.luzoff{
+  width: 50%;
+  background-color: #000000;
+}
+
+.luzoff:hover{
+  background-color: #ffffff;
 }

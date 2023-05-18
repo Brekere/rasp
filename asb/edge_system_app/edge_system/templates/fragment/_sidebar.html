@@ -76,9 +76,20 @@
             </div>
           </li>
         </ul>
-        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"></a>
+        <br>
         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ url_for('machine.info_all') }}">Machine Info</a>    
         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ url_for('part.part_info_all') }}">Part Info</a>    
+        
+
+        <div class="control">
+          <form>
+            <h5 class="Titulo">Panel</h5>
+            <a class="boton inicio" href="#"><i class="fa fa-eject"></i><br>Inicio de ciclo</a>
+            <a class="boton paro" href="#">Paro de <br><i class="fa fa-ban"></i><br> emergencia</a>
+            <a class="boton luzon" href="#"><i class="fa fa-sun"></i>On</a>
+            <a class="boton luzoff" href="#"><i class="fa fa-moon"></i>Off</a>
+          </form>
+        </div>
 
 
       </div>
@@ -86,3 +97,26 @@
     <!-- Page content wrapper-->
     <div id="page-content-wrapper">
       <button class="btn btn-primary" id="sidebarToggle">Metrics Menu</button>
+
+
+      <script>
+        window.addEventListener('DOMContentLoaded', event => {
+    
+    // Toggle the side navigation
+    const sidebarToggle = document.body.querySelector('#sidebarToggle');
+    if (sidebarToggle) {
+        // Uncomment Below to persist sidebar toggle between refreshes
+        // if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
+        //     document.body.classList.toggle('sb-sidenav-toggled');
+        // }
+        sidebarToggle.addEventListener('click', event => {
+            console.log("ENTRO")
+            event.preventDefault();
+            document.body.classList.toggle('sb-sidenav-toggled');
+            localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
+        });
+    }
+    
+    });
+    
+    </script>

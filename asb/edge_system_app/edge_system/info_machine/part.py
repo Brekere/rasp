@@ -8,7 +8,7 @@ from flask_login import login_required
 from werkzeug.utils import redirect, secure_filename
 import os
 
-from edge_system import db, ALLOWED_EXTENSIONS_FILE, app
+from edge_system import db, ALLOWED_EXTENSIONS_FILE, app, rol_admin_need
 from edge_system.info_machine.model.machine import Machine, RegisterForm
 from edge_system.info_machine.model.part_info import Part, PartForm
 from edge_system.info_machine.model.rework_part_info import ReworkPart
@@ -17,6 +17,7 @@ part = Blueprint('part', __name__)
 
 @part.before_request
 @login_required
+@rol_admin_need
 def constructor():
    pass
 
@@ -36,7 +37,7 @@ def part_register():
             flash('Part already registered!')
             return redirect(url_for('part.part_register'))
         
-        part_ =  Part(request.form['id'],
+        part =  Part(request.form['id'],
                       request.form['namepart'],
                       request.form['timestamp'], 
                       request.form['OK'],
@@ -53,7 +54,7 @@ def part_register():
             part.file = filename
 
 
-        db.session.add(part_)
+        db.session.add(part)
         db.session.commit()
         flash("Part information saved locally!!")
         return redirect(url_for('part.part_info_all'))

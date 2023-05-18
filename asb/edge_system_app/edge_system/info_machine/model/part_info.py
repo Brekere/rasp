@@ -39,7 +39,7 @@ class PartForm(FlaskForm):
     timestamp = DateField('Fecha', validators=[InputRequired()])
     OK = IntegerField('OK: ') #, validators=[InputRequired()]
     NOK = IntegerField('NOK: ')#, validators=[InputRequired()]
-    working_time = IntegerField('Tiempo de trabajo', validators=[InputRequired()])
+    working_time = IntegerField('Tiempo de trabajo')#validators=[InputRequired()]
     id_machine = SelectField('Identificador de la maquina: ', coerce=int)
     file = FileField('Archivo')
 
