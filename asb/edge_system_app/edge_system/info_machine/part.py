@@ -110,7 +110,7 @@ def part_update(id):
 
     return render_template('part/update.html', part=part, form=form)
 
-@part.route('/part/info_all/')
+@part.route('/part/info_all')
 def part_info_all():
     parts = Part.query.all()
     print(parts)

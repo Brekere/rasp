@@ -4,9 +4,10 @@ import random
 
 # Create a TCP/IP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#sock.bind( ("", 1234) )
 
 # Connect the socket to the port where the server is listening
-server_address = ('localhost', 10000)
+server_address = ('192.168.0.12', 10000)
 print('connecting to {} port {}'.format(*server_address))
 sock.connect(server_address)
 
@@ -24,7 +25,7 @@ if status == 1:
 data_str = "{"+data_str+"}"
 
 #part_info_data b"{\'status\':0,\'working_time\':100}"
-part_info_data =  bytes(data_str)#bytes(data_str, 'utf-8')
+part_info_data =  bytes(data_str, 'utf-8')
 
 try:
 
@@ -39,7 +40,7 @@ try:
     amount_expected = len(message)
 
     while amount_received < amount_expected:
-        data = sock.recv(16)
+        data = sock.recv(1234)
         amount_received += len(data)
         print('received {!r}'.format(data))
 

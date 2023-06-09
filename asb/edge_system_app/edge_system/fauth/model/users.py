@@ -36,7 +36,8 @@ class UsersLogin(db.Model):
     def get_id(self):
         return str(self.id)
 
-    def __init__(self, username, fullname, pwhash, id_employee, id_role):
+    def __init__(self, id, username, fullname, pwhash, id_employee, id_role):
+        self.id = id
         self.username = username
         self.fullname = fullname
         self.pwhash = generate_password_hash(pwhash)
@@ -50,6 +51,7 @@ class UsersLogin(db.Model):
         return check_password_hash(self.pwhash, password)
 
 class RegisterForm(FlaskForm):
+    id = IntegerField('id', validators = [InputRequired()])
     username = StringField('User', validators = [InputRequired()])
     password = PasswordField('Password', validators = [InputRequired()])
     fullname = StringField('Full name', validators = [InputRequired()])

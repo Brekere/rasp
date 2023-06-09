@@ -1,13 +1,13 @@
 {% extends 'layout/base.html' %}
 
 {% block content %}
-  <div class="control border-end bg-white">
+  <div class="control border-end bg-white borde">
     <form>
       <h5 class="Titulo">Panel</h5>
-      <a class="boton inicio" href="#"><i class="fa fa-eject"></i><br>Inicio de ciclo</a>
-      <a class="boton paro" href="#">Paro de <br><i class="fa fa-ban"></i><br> emergencia</a>
-      <a class="boton luzon" href="#"><i class="fa fa-sun"></i>On</a>
-      <a class="boton luzoff" href="#"><i class="fa fa-moon"></i>Off</a>
+      <a class="boton inicio" href="{{ url_for('control.start') }}"><i class="fa fa-eject"></i><br>Inicio de ciclo</a>
+      <a class="boton paro" href="{{ url_for('control.stop') }}">Paro de <br><i class="fa fa-ban"></i><br> emergencia</a>
+      <a class="boton luzon" href="{{ url_for('control.luzon') }}"><i class="fa fa-sun"></i>On</a>
+      <a class="boton luzoff" href="{{ url_for('control.luzoff') }}"><i class="fa fa-moon"></i>Off</a>
     </form>
   </div>
 

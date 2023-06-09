@@ -1,10 +1,10 @@
-{% extends 'layout/base_plots.html' %}
+{% extends 'layout/base.html' %}
 
 {% block content %}
 
-<div class="jumbotron">
+<div class="jumbotron borde">
     <div>
-        <h1 class="display-4">{{ user['username'] }}</h1>
+        <h1 class="display-4">{{ user['fullname'] }}</h1>
     </div>
 
 <table class="blueTable">
@@ -22,10 +22,6 @@
         <tr>
             <td>Username</td>
             <td>{{user.username}}</td>
-        </tr>
-        <tr>
-            <td>Fullname</td>
-            <td>{{user.fullname}}</td>
         </tr>
         <tr>
             <td>id employee</td>

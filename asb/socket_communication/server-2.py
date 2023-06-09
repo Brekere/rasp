@@ -8,10 +8,10 @@ import signal
 
 from server_part import app, db
 
+#app.run(host='0.0.0.0', port=5035)
+
 from server_part.model.part_info import Part
 from server_part.model.rework_part_info import ReworkPart
-
-
 
 def receiveSignal(signalNumber, frame):
     current_time = dtime.datetime.now()
@@ -97,9 +97,8 @@ logging.info('\n\t Starting (or re-starting) app at {}'.format(labelTime))
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Bind the socket to the port
-#ip_ = '192.168.1.101'
-ip_ = '0.0.0.0'
-server_address = (ip_, 10001)
+ip_ = '192.168.0.12'
+server_address = (ip_, 10000)
 print('starting up on {} port {}'.format(*server_address))
 text_info = 'starting up on {} port {}'.format(*server_address)
 generateLogging('Socket:: ', '{}'.format(text_info), '\n\t', loggingType='info')
@@ -108,12 +107,14 @@ sock.bind(server_address)
 # Listen for incoming connections
 sock.listen(1)
 
+
 while True:
     # Wait for a connection
     #print('waiting for a connection')
     text_info = 'waiting for a connection'
     generateLogging('Socket loop:: ', '{}'.format(text_info), '\n\t', loggingType='info')
     connection, client_address = sock.accept()
+    print("Conexion establecida desde: ",client_address)
     try:
         #print('connection from', client_address)
         text_info = 'connection from', client_address

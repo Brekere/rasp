@@ -1,0 +1,29 @@
+{{ form.id.label }} 
+{{ form.id(class="form-control") }}
+
+{{ form.username.label }} 
+{{ form.username(class="form-control") }}
+
+{{ form.fullname.label }} 
+{{ form.fullname(class="form-control") }}
+
+{{ form.id_employee.label }} 
+{{ form.id_employee(class="form-control") }}
+
+{{ form.id_role.label }} 
+<select class="form-control" name="id_role" id="id_role">
+    <option value="admin">Administrador</option>
+    <option value="operador">Operador</option>
+    <option value="linea">Encargado de linea</option>
+    <option value="mtto">Mantenimiento</option>
+</select>
+
+{{ form.password.label }} 
+{{ form.password(class="form-control") }}
+
+{{ form.confirm.label }} 
+{{ form.confirm(class="form-control") }}
+
+<br>
+
+{{ form.csrf_token }}

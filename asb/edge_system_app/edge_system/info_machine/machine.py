@@ -81,11 +81,11 @@ def machine_register():
                             request.form['file'])
 
         if form.file.data:
-         file = form.file.data
-         if allowed_extensions_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
-            machine.file = filename
+            file = form.file.data
+            if allowed_extensions_file(file.filename):
+                filename = secure_filename(file.filename)
+                file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
+                machine.file = filename
 
         db.session.add(machine)
         db.session.commit()

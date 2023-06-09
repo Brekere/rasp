@@ -1044,3 +1044,435 @@ INFO:root:
 	Socket::  --> starting up on 0.0.0.0 port 10001
 INFO:root:
 	Socket loop::  --> waiting for a connection
+INFO:root:
+	 Starting (or re-starting) app at 01/06/2023 12:51:52
+INFO:root:
+	Socket::  --> starting up on 0.0.0.0 port 10001
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.14', 58726))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'')
+INFO:root:
+	 Starting (or re-starting) app at 01/06/2023 13:03:32
+INFO:root:
+	Socket::  --> starting up on 0.0.0.0 port 10000
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	 Starting (or re-starting) app at 01/06/2023 14:30:56
+INFO:root:
+	Socket::  --> starting up on 0.0.0.0 port 10000
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	 Starting (or re-starting) app at 01/06/2023 14:31:50
+INFO:root:
+	Socket::  --> starting up on 0.0.0.0 port 10001
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.14', 59374))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'')
+INFO:root:
+	 Starting (or re-starting) app at 01/06/2023 14:33:19
+INFO:root:
+	Socket::  --> starting up on 0.0.0.0 port 10001
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.14', 59381))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'')
+INFO:root:
+	 Starting (or re-starting) app at 01/06/2023 14:39:14
+INFO:root:
+	Socket::  --> starting up on 192.168.0.14 port 10001
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.14', 59397))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'')
+INFO:root:
+	 Starting (or re-starting) app at 01/06/2023 14:41:27
+INFO:root:
+	Socket::  --> starting up on 192.168.0.14 port 10001
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	 Starting (or re-starting) app at 01/06/2023 14:43:55
+INFO:root:
+	Socket::  --> starting up on 192.168.0.14 port 10001
+INFO:root:
+	 Starting (or re-starting) app at 01/06/2023 14:44:18
+INFO:root:
+	Socket::  --> starting up on 192.168.0.14 port 10002
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.14', 59442))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'')
+INFO:root:
+	 Starting (or re-starting) app at 01/06/2023 14:52:08
+INFO:root:
+	Socket::  --> starting up on 192.168.0.14 port 10002
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.14', 59465))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'')
+INFO:root:
+	 Starting (or re-starting) app at 01/06/2023 16:56:19
+INFO:root:
+	Socket::  --> starting up on 192.168.0.14 port 10002
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.14', 51553))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'')
+INFO:root:
+	 Starting (or re-starting) app at 02/06/2023 11:12:12
+INFO:root:
+	Socket::  --> starting up on 192.168.0.14 port 10002
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.14', 64421))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'')
+INFO:root:
+	 Starting (or re-starting) app at 02/06/2023 11:19:23
+INFO:root:
+	Socket::  --> starting up on 192.168.0.14 port 10002
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.14', 64439))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'')
+INFO:root:
+	 Starting (or re-starting) app at 02/06/2023 11:38:55
+INFO:root:
+	Socket::  --> starting up on 192.168.0.14 port 10002
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.14', 64695))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'')
+INFO:root:
+	 Starting (or re-starting) app at 02/06/2023 13:22:46
+INFO:root:
+	Socket::  --> starting up on 192.168.0.14 port 10002
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.14', 49365))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'')
+INFO:root:
+	 Starting (or re-starting) app at 02/06/2023 14:05:41
+INFO:root:
+	Socket::  --> starting up on 192.168.0.14 port 10002
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.14', 49592))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'')
+INFO:root:
+	 Starting (or re-starting) app at 02/06/2023 14:37:30
+INFO:root:
+	Socket::  --> starting up on 192.168.0.14 port 10002
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.14', 49970))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'')
+INFO:root:
+	 Starting (or re-starting) app at 02/06/2023 14:44:32
+INFO:root:
+	Socket::  --> starting up on 192.168.0.14 port 10002
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.14', 50089))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'')
+INFO:root:
+	 Starting (or re-starting) app at 02/06/2023 17:43:24
+INFO:root:
+	Socket::  --> starting up on 192.168.0.14 port 10002
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.14', 49845))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'')
+INFO:root:
+	 Starting (or re-starting) app at 05/06/2023 12:46:04
+INFO:root:
+	Socket::  --> starting up on 192.168.0.14 port 10002
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.14', 51715))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'')
+INFO:root:
+	 Starting (or re-starting) app at 05/06/2023 12:48:28
+INFO:root:
+	Socket::  --> starting up on 192.168.0.14 port 10000
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.14', 51731))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b"{'status':0, 'working_time':2390}")
+INFO:root:
+	create_object_Part:: json::  --> {'status': 0, 'working_time': 2390}
+ERROR:root:
+	When saving in db:::  --> Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.14', 51736))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b"{'status':1, 'working_time':284, 'rework':1, 'rework_status':0, 'reworking_time':2337}")
+INFO:root:
+	create_object_Part:: json::  --> {'status': 1, 'working_time': 284, 'rework': 1, 'rework_status': 0, 'reworking_time': 2337}
+ERROR:root:
+	When saving in db:::  --> Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+ERROR:root:
+	When saving in db:::  --> Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	 Starting (or re-starting) app at 08/06/2023 12:56:27
+INFO:root:
+	Socket::  --> starting up on 192.168.0.12 port 10000
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	 API stoped at 2023/06/08 12:56:38
+INFO:root:
+	 Starting (or re-starting) app at 08/06/2023 12:57:24
+INFO:root:
+	Socket::  --> starting up on 0.0.0.0 port 10000
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	 Starting (or re-starting) app at 08/06/2023 13:03:00
+INFO:root:
+	Socket::  --> starting up on 192.168.0.12 port 10000
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.12', 62998))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b"{'status':1, 'working_time':2791, 'rework':0}")
+INFO:root:
+	create_object_Part:: json::  --> {'status': 1, 'working_time': 2791, 'rework': 0}
+ERROR:root:
+	When saving in db:::  --> Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.12', 62999))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b"{'status':0, 'working_time':615}")
+INFO:root:
+	create_object_Part:: json::  --> {'status': 0, 'working_time': 615}
+ERROR:root:
+	When saving in db:::  --> Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.12', 63000))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b"{'status':1, 'working_time':2227, 'rework':1, 'rework_status':1, 'reworking_time':583}")
+INFO:root:
+	create_object_Part:: json::  --> {'status': 1, 'working_time': 2227, 'rework': 1, 'rework_status': 1, 'reworking_time': 583}
+ERROR:root:
+	When saving in db:::  --> Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+ERROR:root:
+	When saving in db:::  --> Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.12', 63001))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b"{'status':1, 'working_time':2531, 'rework':0}")
+INFO:root:
+	create_object_Part:: json::  --> {'status': 1, 'working_time': 2531, 'rework': 0}
+ERROR:root:
+	When saving in db:::  --> Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	 Starting (or re-starting) app at 08/06/2023 13:08:30
+INFO:root:
+	Socket::  --> starting up on 192.168.0.12 port 10000
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.12', 63019))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b"{'status':0, 'working_time':1972}")
+INFO:root:
+	create_object_Part:: json::  --> {'status': 0, 'working_time': 1972}
+ERROR:root:
+	When saving in db:::  --> Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.12', 63020))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b"{'status':0, 'working_time':354}")
+INFO:root:
+	create_object_Part:: json::  --> {'status': 0, 'working_time': 354}
+ERROR:root:
+	When saving in db:::  --> Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.12', 63021))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b"{'status':1, 'working_time':1500, 'rework':0}")
+INFO:root:
+	create_object_Part:: json::  --> {'status': 1, 'working_time': 1500, 'rework': 0}
+ERROR:root:
+	When saving in db:::  --> Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.12', 63023))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b"{'status':1, 'working_time':2303, 'rework':0}")
+INFO:root:
+	create_object_Part:: json::  --> {'status': 1, 'working_time': 2303, 'rework': 0}
+ERROR:root:
+	When saving in db:::  --> Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.12', 63178))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'')
+INFO:root:
+	 Starting (or re-starting) app at 08/06/2023 13:25:19
+INFO:root:
+	Socket::  --> starting up on 192.168.0.12 port 10000
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.12', 64165))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'')
+INFO:root:
+	 Starting (or re-starting) app at 08/06/2023 17:10:36
+INFO:root:
+	Socket::  --> starting up on 192.168.0.12 port 10000
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.12', 64169))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'')
+INFO:root:
+	 Starting (or re-starting) app at 08/06/2023 17:17:30
+INFO:root:
+	Socket::  --> starting up on 192.168.0.12 port 10000
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.12', 64202))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'')
+INFO:root:
+	 Starting (or re-starting) app at 08/06/2023 17:17:58
+INFO:root:
+	Socket::  --> starting up on 192.168.0.12 port 10000
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.12', 64211))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'')
+INFO:root:
+	 Starting (or re-starting) app at 08/06/2023 17:24:48
+INFO:root:
+	Socket::  --> starting up on 192.168.0.12 port 10000
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.12', 64240))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'')
+INFO:root:
+	 Starting (or re-starting) app at 08/06/2023 17:25:51
+INFO:root:
+	Socket::  --> starting up on 192.168.0.12 port 10000
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.12', 12340))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'Este es el mensaje')
+ERROR:root:
+	create_object_Part::  --> Expecting value: line 1 column 1 (char 0)

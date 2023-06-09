@@ -20,24 +20,35 @@ control = Blueprint('control', __name__)
 def constructor():
    pass
 
-@control.route('/panel/')
+@control.route('/panel')
 def panel():
+    print('Panel')
     return render_template('control/panel.html')
+    
 
-@control.route('/stop/')
+@control.route('/stop')
 def stop():
+    print('stop')
+    flash('Paro de emergencia','danger')
     return render_template('control/panel.html')
+    
 
-@control.route('/luz/on/')
+@control.route('/luz/on')
 def luzon():
+    print('luzon')
+    flash('Luz prendida','warning')
     return render_template('control/panel.html')
 
 @control.route('/luz/off')
 def luzoff():
+    print('luzoff')
+    flash('Luz apagada','dark')
     return render_template('control/panel.html')
 
-@control.route('/start/')
+@control.route('/start')
 def start():
+    print('start')
+    flash('Inicio')
     return render_template('control/panel.html')
     
 

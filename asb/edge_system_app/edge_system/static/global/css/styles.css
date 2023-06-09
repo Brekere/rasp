@@ -11341,6 +11341,7 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
   color: #fff;
   background-color: #4CAF50;
   border-radius: 15px;
+  text-shadow: 0 0 5px black;
 }
 
 .boton:hover {
@@ -11351,16 +11352,12 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 
 .boton:active {
   background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+  box-shadow: 0 1px #666;
+  transform: translateY(1px);
 }
 
 .inicio{
   width: 100%;
-}
-
-.inicio:hover{
-
 }
 
 .paro{
@@ -11389,4 +11386,17 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 
 .luzoff:hover{
   background-color: #ffffff;
+}
+
+.borde{
+  border-radius: 15px;
+  border: 1px solid #5592bb;
+}
+
+.itemtable{
+  text-decoration: none;
+}
+
+.itemtable:hover{
+  text-decoration: none;
 }

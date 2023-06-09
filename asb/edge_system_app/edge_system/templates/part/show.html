@@ -6,6 +6,10 @@
     <div>
         <h1 class="display-4"> <img src="{{ url_for('static',filename="/uploads/"+part.file)}}" height="150">{{ part['namepart'] }}</h1>
     </div>
+    <a data-toggle="tooltip" data-placement="top" data-title="Editar" class="btn btn-success btn-sm" href="{{ url_for('part.part_update', id=part['id']) }}"><i class="fa fa-edit"></i></a>
+
+    <button data-toggle="modal" data-target="#deleteModal" data-name="{{part['namepart']}}" data-id="{{part['id']}}"
+    class="btn btn-danger btn-sm" href="{{ url_for('part.part_delete', id=part['id']) }}"><i data-toggle="tooltip" data-placement="top" data-bs-title="Eliminar parte {{ part['namepart'] }}" class="fa fa-trash"></i></button>
 
     <table class="blueTable"> 
         <thead>
@@ -37,11 +41,46 @@
             </tr>
             <tr>
                 <td>id_machine</td>
-                <td><a href="{{ url_for('machine.show', id=part['id_machine']) }}">{{part.id_machine}}</a></td>
+                <td><a class="itemtable" href="{{ url_for('machine.show', id=part['id_machine']) }}">{{part.id_machine}}</a></td>
           </tr>
         </tbody>
       </table>
   </div>
 
+  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Borrar: <span></span></h5>
+        <button type="button" class="btn btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ¿Seguro que desea borrar la parte seleccionada
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <a href="#" id="deleteProduct" class="btn btn-danger">Borrar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    window.onload = function () {
+        
+    $("#deleteModal").on("show.bs.modal", function (event) {
+        var button = event.relatedTarget
+        var name = button.getAttribute("data-name")
+        var id = button.getAttribute("data-id")
+        
+        console.log(this)
+
+        this.querySelector(".modal-title span").innerHTML=name
+        this.querySelector("#deleteProduct").setAttribute("href","/part/delete/"+id)
+    })
+
+    }
+  </script>
 
 {% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h2> Actualiza los datos del usuario </h2>
+   <form action="{{ url_for('fauth.user_update', id=user.id)}}" method="POST">
+    
+    {%include 'fauth/_form.html'%}
+
+       <input class="btn btn-success" type="submit" value="Actualizar">
+   </form>
+</div>
+
+{% endblock %}

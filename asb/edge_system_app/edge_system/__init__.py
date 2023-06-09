@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for
+from flask import Flask, redirect, url_for, flash
 from flask_wtf.csrf import CSRFProtect
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, current_user, logout_user
@@ -26,11 +26,20 @@ login_manager.init_app(app)
 login_manager.login_view = "fauth.login"
 
 # para cuando un administrador entre para el manejo de usuarios ... 
-def rol_admin_need(f):
+'''def rol_admin_need(f):
     @wraps(f)
     def wrapper(*args, **kwds):
         if current_user.id_role.value != 'Administrador':
             logout_user()
+            return redirect(url_for('fauth.login'))
+        return f(*args, **kwds)
+    return wrapper'''
+
+def rol_admin_need(f):
+    @wraps(f)
+    def wrapper(*args, **kwds):
+        if current_user.id_role.value != 'Administrador':
+            flash('Acceso solo a administrador','danger')
             return redirect(url_for('fauth.login'))
         return f(*args, **kwds)
     return wrapper

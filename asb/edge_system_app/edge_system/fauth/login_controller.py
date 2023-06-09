@@ -2,7 +2,8 @@ import re
 from flask import Blueprint, render_template, flash, url_for, request
 from flask_login import logout_user, login_user, current_user
 from werkzeug.utils import redirect
-from edge_system import db, rol_admin_need
+from werkzeug.security import check_password_hash, generate_password_hash
+from edge_system import db
 from edge_system.fauth.model.users import LoginForm, UsersLogin, RegisterForm
 from edge_system import login_manager
 
@@ -15,33 +16,33 @@ def load_user(user_id):
 @fauth.route('/users/register', methods=['GET', 'POST'])
 def register():
 
-    if current_user.is_authenticated:
+    if current_user.is_authenticated and current_user.id_role.value=='Administrador':
 
-        if current_user.id_role.value=='Administrador':
-
-            form = RegisterForm() #meta={'csrf': False}
-            if form.validate_on_submit():
-                if UsersLogin.query.filter_by(id_employee = form.id_employee.data).first():
-                    flash("Employee already registered!!", 'danger')
-                else:
-                    user = UsersLogin(request.form['username'],
-                                    request.form['fullname'], 
-                                    request.form['password'],
-                                    request.form['id_employee'],
-                                    request.form['id_role'])
-                    
-                    db.session.add(user)
-                    db.session.commit()
-                    flash("Successfully registered employee!!")
-                return redirect(url_for('home.home_page'))
-            
-            if form.errors:
-                flash(form.errors, 'danger')
-
-            return render_template('fauth/register.html', form = form)
+        form = RegisterForm() #meta={'csrf': False}
+        if form.validate_on_submit():
+            if UsersLogin.query.filter_by(id_employee = form.id_employee.data).first() and UsersLogin.query.filter_by(id = form.id.data).first():
+                flash("Employee already registered!!", 'danger')
+                return render_template('fauth/register.html', form = form)
+            else:
+                user = UsersLogin(request.form['id'],
+                                request.form['username'],
+                                request.form['fullname'], 
+                                request.form['password'],
+                                request.form['id_employee'],
+                                request.form['id_role'])
+                
+                db.session.add(user)
+                db.session.commit()
+                flash("Successfully registered employee!!")
+            return redirect(url_for('home.home_page'))
         
-        flash('Ingresar como administrador para registrar usuario','danger')
-        return redirect(url_for('fauth.login'))
+        if form.errors:
+            flash(form.errors, 'danger')
+
+        return render_template('fauth/register.html', form = form)
+    
+    flash('Ingresar como administrador para registrar usuario','danger')
+    return redirect(url_for('fauth.login'))
     
 
 
@@ -76,6 +77,70 @@ def login():
 def user_show(id):
     user = UsersLogin.query.get_or_404(id)
     return render_template('fauth/show.html', user = user)
+    
+
+@fauth.route('/users/update/<int:id>', methods=['POST','GET'])
+def user_update(id):
+
+    if current_user.is_authenticated and current_user.id_role.value=='Administrador':
+
+        user = UsersLogin.query.get_or_404(id)
+
+        form = RegisterForm()
+
+        if request.method == 'GET':
+            form.id.data = user.id
+            form.username.data = user.username
+            form.fullname.data = user.fullname
+            form.id_employee.data = user.id_employee
+            form.id_role.data = user.id_role
+
+        if form.validate_on_submit():
+            user.id = form.id.data
+            user.username = form.username.data
+            user.fullname = form.fullname.data
+            user.pwhash = generate_password_hash(form.password.data)
+            user.id_employee = form.id_employee.data
+            user.id_role = form.id_role.data
+
+            db.session.add(user)
+            db.session.commit()
+            flash("Usuario actualizado con exito")
+            return redirect(url_for('fauth.user_show', id=user.id))
+        
+        if form.errors:
+            flash(form.errors,'danger')
+
+        return render_template('fauth/update.html',user=user, form=form)
+    
+    flash('Ingresar como administrador','danger')
+    return redirect(url_for('fauth.login'))
+
+@fauth.route('/users/info_all')
+def users_info_all():
+    if current_user.is_authenticated and current_user.id_role.value=='Administrador':
+
+        users=UsersLogin.query.all()
+        print(users)
+        return render_template("fauth/users_info.html", users=users)
+    
+    flash('Ingresar como administrador','danger')
+    return redirect(url_for('fauth.login'))
+
+
+@fauth.route('/users/delete/<int:id>')
+def user_delete(id):
+    if current_user.is_authenticated and current_user.id_role.value=='Administrador':
+
+        user=UsersLogin.query.get_or_404(id)
+        db.session.delete(user)
+        db.session.commit()
+        flash("Usuario borrado con exito")
+        return redirect(url_for('fauth.users_info_all'))
+    
+    flash('Ingresar como administrador','danger')
+    return redirect(url_for('fauth.login'))
+
 
 @fauth.route('/users/logout')
 def logout():

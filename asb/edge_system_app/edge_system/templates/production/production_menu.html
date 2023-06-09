@@ -2,131 +2,45 @@
 
 {% block content %}
 
-<div class="jumbotron">
-    <h1>Production information {{mode}} </h1>
-</div>
-
-<div style="text-align: center">
-{% if mode == "Day"%}
-
-    <div class="btn-group">
-        <table>
-            <tr>
-                <td class="text-center align-middle">
-                    
-                        <button type="button" class="btn btn-info" onclick="window.location.href='{{ url_for('machine.day_production_ok_nok')}}'">
-                            OK and NOK data
-                        </button>
-                        <p></p>
-                        <button type="button" class="btn btn-info" onclick="window.location.href='{{ url_for('machine.day_production_time')}}';">
-                            Production time data
-                        </button>
-                </td>
-                <td></td>
-                <td>
-                    <button type="button" class="btn btn-info" onclick="window.location.href='{{ url_for('machine.day_production_rework')}}';">
-                        Rework parts
-                    </button>
-                    <p></p>
-                    <button type="button" class="btn btn-info" onclick="window.location.href='{{ url_for('machine.day_production_reworking_time')}}';">
-                        Reworking time data
-                    </button>
-                </td>
-                <td></td>
-                <td>
-                    <button type="button" class="btn btn-info" onclick="">
-                        Downtime for maintenance
-                    </button>
-                    <p></p>
-                    <button type="button" class="btn btn-info" onclick="">
-                        Downtime for outservice
-                    </button>
-                </td>
-            </tr>
-        </table>
-    </div>
-    
-
-{% elif mode == "Week"%}
-
-    <div class="btn-group">
-        <table>
-            <tr>
-                <td class="text-center align-middle">
-                    
-                        <button type="button" class="btn btn-info" onclick="window.location.href='{{ url_for('machine.week_production_ok_nok')}}'">
-                            OK and NOK data
-                        </button>
-                        <p></p>
-                        <button type="button" class="btn btn-info" onclick="window.location.href='{{ url_for('machine.week_production_time')}}';">
-                            Production time data
-                        </button>
-                </td>
-                <td></td>
-                <td>
-                    <button type="button" class="btn btn-info" onclick="window.location.href='{{ url_for('machine.week_production_rework')}}';">
-                        Rework parts
-                    </button>
-                    <p></p>
-                    <button type="button" class="btn btn-info" onclick="window.location.href='{{ url_for('machine.week_production_reworking_time')}}';">
-                        Reworking time data
-                    </button>
-                </td>
-                <td></td>
-                <td>
-                    <button type="button" class="btn btn-info" onclick="">
-                        Downtime for maintenance
-                    </button>
-                    <p></p>
-                    <button type="button" class="btn btn-info" onclick="">
-                        Downtime for outservice
-                    </button>
-                </td>
-            </tr>
-        </table>
-    </div>
-
-
-{% else %}
-
-    <div class="btn-group">
-        <table>
-            <tr>
-                <td class="text-center align-middle">
-                    
-                        <button type="button" class="btn btn-info" onclick="window.location.href='{{ url_for('machine.month_production_ok_nok')}}'">
-                            OK and NOK data
-                        </button>
-                        <p></p>
-                        <button type="button" class="btn btn-info" onclick="window.location.href='{{ url_for('machine.month_production_time')}}';">
-                            Production time data
-                        </button>
-                </td>
-                <td></td>
-                <td>
-                    <button type="button" class="btn btn-info" onclick="window.location.href='{{ url_for('machine.month_production_rework')}}';">
-                        Rework parts
-                    </button>
-                    <p></p>
-                    <button type="button" class="btn btn-info" onclick="window.location.href='{{ url_for('machine.month_production_reworking_time')}}';">
-                        Reworking time data
-                    </button>
-                </td>
-                <td></td>
-                <td>
-                    <button type="button" class="btn btn-info" onclick="">
-                        Downtime for maintenance
-                    </button>
-                    <p></p>
-                    <button type="button" class="btn btn-info" onclick="">
-                        Downtime for outservice
-                    </button>
-                </td>
-            </tr>
-        </table>
-    </div>
-
-{% endif%}
-
+<div class="jumbotron borde">
+    <h1 class="display-4">Production information {{mode}} </h1>
+    <hr class="my-4">
+    {% if mode == "Day"%}
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 borde" href="{{ url_for('machine.day_production_ok_nok') }}"><h1>OK and NOK data</h1></a>
+            <br>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 borde" href="{{ url_for('machine.day_production_time') }}"><h1>Production time data</h1></a>
+            <br>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 borde" href="{{ url_for('machine.day_production_rework') }}"><h1>Rework parts</h1></a>
+            <br>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 borde" href="{{ url_for('machine.day_production_reworking_time') }}"><h1>Reworking time data</h1></a>
+            <br>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 borde" href="#"><h1>Downtime for maintenance</h1></a>
+            <br>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 borde" href="#"><h1>Downtime for outservice</h1></a>
+        {% elif mode == "Week"%}
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 borde" href="{{ url_for('machine.week_production_ok_nok') }}"><h1>OK and NOK data</h1></a>
+            <br>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 borde" href="{{ url_for('machine.week_production_time') }}"><h1>Production time data</h1></a>
+            <br>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 borde" href="{{ url_for('machine.week_production_rework') }}"><h1>Rework parts</h1></a>
+            <br>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 borde" href="{{ url_for('machine.week_production_reworking_time') }}"><h1>Reworking time data</h1></a>
+            <br>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 borde" href="#"><h1>Downtime for maintenance</h1></a>
+            <br>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 borde" href="#"><h1>Downtime for outservice</h1></a>
+        {% else %}
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 borde" href="{{ url_for('machine.month_production_ok_nok') }}"><h1>OK and NOK data</h1></a>
+            <br>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 borde" href="{{ url_for('machine.month_production_time') }}"><h1>Production time data</h1></a>
+            <br>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 borde" href="{{ url_for('machine.month_production_rework') }}"><h1>Rework parts</h1></a>
+            <br>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 borde" href="{{ url_for('machine.month_production_reworking_time') }}"><h1>Reworking time data</h1></a>
+            <br>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 borde" href="#"><h1>Downtime for maintenance</h1></a>
+            <br>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 borde" href="#"><h1>Downtime for outservice</h1></a>
+    {% endif %}
 </div>
 {% endblock %}
