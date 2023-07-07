@@ -1,14 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="http://www.asbajio.mx"  target="_blank"> 
-        <span><img src="{{ url_for('static',filename='img/asb-logo_01.png')}}" height="50"/></span> 
+        <span><img src="{{ url_for('static',filename='uploads/maquina1.jpg')}}" height="50"/></span> 
         &emsp; Historical Data Visualization</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="/">Home</a>
+        <li class="nav-item">
+          <a class="nav-link" href="/"><i class="fa fa-home"></i></a>
         </li>
       </ul>
       <ul class="navbar-nav ">
@@ -16,8 +16,7 @@
             <li class="nav-item"></li>
               <a class="nav-link" href="{{ url_for('fauth.login') }}">Login </a>
             </li>
-          {% endif %}
-          {% if current_user.username %}
+          {% else %}
               <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
                     Hola: {{ current_user.username }}

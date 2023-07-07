@@ -5,15 +5,23 @@
 <a data-toggle="tooltip" data-placement="top" data-title="Registrar" class="btn btn-primary"
     href="{{ url_for('fauth.register') }}">Registrar usuario</a>
 
+<div class="jumbotron">
+    <div>
+        <h1 class="display-4">Usuarios</h1>
+    </div>
 
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
 
 <!-- Page content-->
 
-<table class="blueTable">
+<table class="blueTable sortable" id="myTable">
     <thead>
-        <tr>
+        <tr class="header">
             <th>
-                <h3>Usuarios</h3>
+                <h3>Nombre</h3>
+            </th>
+            <th>
+                <h3>Usuario</h3>
             </th>
             <th>
                 <h3>Puesto</h3>
@@ -28,10 +36,13 @@
         {% for user in users %}
         <tr>
             <td>
-                <a class="itemtable" href="{{ url_for('fauth.user_show', id=user['id']) }}">{{ user['username'] }}</a>
+                <h5><a class="itemtable" href="{{ url_for('fauth.user_show', id=user['id']) }}">{{ user['fullname'] }}</a></h5>
             </td>
             <td>
-                {{ user.id_role.value }}
+                <h5>{{ user.username }}</h5>
+            </td>
+            <td>
+                <h5>{{ user.id_role.value }}</h5>
             </td>
             <td>
                 <a data-toggle="tooltip" data-placement="top" data-title="Editar" class="btn btn-success btn-sm"
@@ -70,6 +81,7 @@
         </div>
     </div>
 </div>
+</div>
 
 <script>
     window.onload = function () {
@@ -84,8 +96,33 @@
             this.querySelector(".modal-title span").innerHTML = name
             this.querySelector("#deleteProduct").setAttribute("href", "/users/delete/" + id)
         })
-
     }
 </script>
+
+<script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+    
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+    </script>
+
+<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
 
 {% endblock %}

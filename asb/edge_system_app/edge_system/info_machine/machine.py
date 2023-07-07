@@ -169,7 +169,6 @@ def machine_delete(id):
     flash("Maquina borrada con exito")
     return redirect(url_for('machine.info_all'))
     
-    
 @machine.route('/test_get_data')
 def test_get_data():
     data = {'id': [], 'working_time': []}
@@ -205,28 +204,6 @@ def info_all():
     machines = Machine.query.all()
     print(machines)
     return render_template("machine/machines_info.html", machines = machines)
-
-@machine.route('/machine/info/<int:id>', methods=['GET'])
-def info_2(id):
-    machine = Machine.query.get_or_404(id)
-    print(machine) 
-    return render_template("machine/machines_info.html", machine = machine)
-
-
-@machine.route('/machine_info')
-def info2():
-    try:
-        with open("edge_system/static/tmp/machine.json", "r") as read_file:
-            data = json.load(read_file)
-        #print(data)
-        # Select the main information only:
-        data_filtered = data
-        nickname = data['nickname']
-        print('data type: ',type(data))
-        del data_filtered['nickname']
-    except:
-        print("ERROR")
-    return render_template("machine/machines_info.html", nickname = nickname, data = data_filtered)
 
 #### Showing the production 
 

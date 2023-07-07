@@ -97,8 +97,8 @@ logging.info('\n\t Starting (or re-starting) app at {}'.format(labelTime))
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Bind the socket to the port
-ip_ = '192.168.0.12'
-server_address = (ip_, 10000)
+ip_ = '192.168.0.19'
+server_address = (ip_, 10001)
 print('starting up on {} port {}'.format(*server_address))
 text_info = 'starting up on {} port {}'.format(*server_address)
 generateLogging('Socket:: ', '{}'.format(text_info), '\n\t', loggingType='info')

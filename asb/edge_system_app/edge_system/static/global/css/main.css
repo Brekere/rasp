@@ -12,6 +12,9 @@ table.blueTable {
 	width: 100%;
 	text-align: left;
 	border-collapse: collapse;
+	padding: 12px 20px;
+  	margin: 8px 0;
+	border-radius: 15px;
   }
   table.blueTable td, table.blueTable th {
 	border: 1px solid #AAAAAA;

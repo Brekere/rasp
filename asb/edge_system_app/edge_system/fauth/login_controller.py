@@ -3,9 +3,8 @@ from flask import Blueprint, render_template, flash, url_for, request
 from flask_login import logout_user, login_user, current_user
 from werkzeug.utils import redirect
 from werkzeug.security import check_password_hash, generate_password_hash
-from edge_system import db
+from edge_system import db, login_manager
 from edge_system.fauth.model.users import LoginForm, UsersLogin, RegisterForm
-from edge_system import login_manager
 
 fauth = Blueprint('fauth', __name__)
 

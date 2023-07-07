@@ -79,8 +79,9 @@
         <br>
         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ url_for('machine.info_all') }}">Machine Info</a>    
         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ url_for('part.part_info_all') }}">Part Info</a>    
-        
-
+        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ url_for('production.production_all') }}">Production(prueba)</a>    
+        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ url_for('fauth.users_info_all') }}">Usuarios</a>    
+      
         <div class="control">
           <form>
             <h5 class="Titulo">Panel</h5>
@@ -95,7 +96,6 @@
     <!-- Page content wrapper-->
     <div id="page-content-wrapper">
       <button class="btn btn-primary" id="sidebarToggle">Metrics Menu</button>
-
 
       <script>
         window.addEventListener('DOMContentLoaded', event => {
@@ -118,3 +118,5 @@
     });
     
     </script>
+
+ 

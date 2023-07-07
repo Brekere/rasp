@@ -4,7 +4,7 @@ class BaseConfig(object):
     DEBUG = True
     TESTING = False
     #SQLALCHEMY_DATABASE_URI = 'mssql+pymssql://sa:ASB.13@192.168.0.13/industria4'
-    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://asbsistemas:asbsistemas@192.168.0.12:3306/app4"
+    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://asbsistemas:asbsistemas@192.168.0.14:3306/app4"
     #SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:asb.#21@192.168.0.21:3306/historic"
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False

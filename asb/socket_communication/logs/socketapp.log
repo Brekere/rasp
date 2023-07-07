@@ -1476,3 +1476,55 @@ INFO:root:
 	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'Este es el mensaje')
 ERROR:root:
 	create_object_Part::  --> Expecting value: line 1 column 1 (char 0)
+INFO:root:
+	 Starting (or re-starting) app at 15/06/2023 12:22:25
+INFO:root:
+	Socket::  --> starting up on 192.168.0.11 port 10000
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.11', 12340))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'Este es el mensaje')
+ERROR:root:
+	create_object_Part::  --> Expecting value: line 1 column 1 (char 0)
+INFO:root:
+	 Starting (or re-starting) app at 15/06/2023 12:25:12
+INFO:root:
+	Socket::  --> starting up on 192.168.0.11 port 10000
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.11', 12340))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'Este es el mensaje')
+ERROR:root:
+	create_object_Part::  --> Expecting value: line 1 column 1 (char 0)
+INFO:root:
+	 Starting (or re-starting) app at 15/06/2023 13:08:04
+INFO:root:
+	Socket::  --> starting up on 192.168.0.11 port 10000
+INFO:root:
+	 Starting (or re-starting) app at 15/06/2023 13:08:32
+INFO:root:
+	Socket::  --> starting up on 192.168.0.11 port 10001
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.11', 12340))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'Este es el mensaje')
+ERROR:root:
+	create_object_Part::  --> Expecting value: line 1 column 1 (char 0)
+INFO:root:
+	 Starting (or re-starting) app at 15/06/2023 16:02:37
+INFO:root:
+	Socket::  --> starting up on 192.168.0.11 port 10001
+INFO:root:
+	Socket loop::  --> waiting for a connection
+INFO:root:
+	Socket loop::  --> ('connection from', ('192.168.0.11', 12340))
+INFO:root:
+	Socket loop::  --> (<class 'bytes'>, ':: Whole data: ', b'Este es el mensaje')
+ERROR:root:
+	create_object_Part::  --> Expecting value: line 1 column 1 (char 0)

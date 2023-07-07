@@ -1,0 +1,82 @@
+{% extends 'layout/base_plots.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <div>
+        <h1 class="display-4">Trabajos</h1>
+    </div>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Inserte nombre de la parte...">
+    
+<table class="blueTable sortable" id="myTable">
+    <thead>
+      <tr>
+          <th>
+              <h3>ID</h3>
+          </th>
+          <th>
+              <h3>Part</h3>
+          </th>
+          <th>
+              <h3>Fecha</h3>
+          </th>
+          <th>
+              <h3>Ok</h3>
+          </th>
+          <th>
+              <h3>Nok</h3>
+          </th>
+          <th>
+              <h3>Total por id</h3>
+          </th>
+      </tr>
+    </thead> 
+    <tbody>
+        {% for part in parts %}
+        <tr>        
+            <td><a class="itemtable" href="{{ url_for('part.show', id=part['id']) }}">{{part.id}}</a></td>
+
+            <td>{{part.namepart}}</td>
+
+            <td>{{part.timestamp.strftime("%d/%m/%Y")}}</td>
+        
+            <td>{{part.OK}}</td>
+        
+            <td>{{part.NOK}}</td>
+
+            <td>{{part.OK+part.NOK}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+  </div>
+
+  <script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+    
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+    </script>
+
+<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+
+
+{% endblock %}

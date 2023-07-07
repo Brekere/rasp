@@ -4,15 +4,23 @@
 
 <a data-toggle="tooltip" data-placement="top" data-title="Registrar" class="btn btn-primary" href="{{ url_for('machine.machine_register') }}">Registrar maquina</a>
 
+<div class="jumbotron">
+    <div>
+        <h1 class="display-4">Maquinas</h1>
+    </div>
       
         {%  for machine in machines%}
         <!-- Page content-->
-        <div class="jumbotron">
-            <div>
-                <h1 class="display-4"> <img src="{{ url_for('static',filename="/uploads/"+machine.file)}}" height="150"> <a class="itemtable" href="{{ url_for('machine.show', id=machine['id']) }}">
+        <div class="borde">
+            <button class="accordion">
+                <h1 class="display-4"> <img src="{{ url_for('static',filename="/uploads/"+machine.file)}}" height="80" alt="Avatar">
                   {{ machine['nickname'] }}
-                </a></h1>
-            </div>
+                </h1>
+            </button>
+        <div class="panel">
+            <a data-toggle="tooltip" data-placement="top" data-title="Editar" class="btn btn-success btn-sm" href="{{ url_for('machine.machine_update', id=machine['id']) }}"><i class="fa fa-edit"></i></a>
+            <a data-toggle="modal" data-target="#deleteModal" data-name="{{machine['nickname']}}" data-id="{{machine['id']}}"
+                class="btn btn-danger btn-sm" href="{{ url_for('machine.machine_delete', id=machine['id']) }}"><i data-toggle="tooltip" data-placement="top" data-bs-title="Eliminar producto {{ machine['nickname'] }}" class="fa fa-trash"></i></a>
           <table class="blueTable"> 
             <thead>
             <tr>
@@ -22,8 +30,20 @@
             </thead>
             <tbody>
                 <tr>
+                    <td>Id</td>
+                    <td>{{machine.id}}</td>
+                </tr>
+                <tr>
                     <td>Description</td>
                     <td>{{machine.description}}</td>
+                </tr>
+                <tr>
+                    <td>Brand</td>
+                    <td>{{machine.brand}}</td>
+                </tr>
+                <tr>
+                    <td>Model</td>
+                    <td>{{machine.model}}</td>
                 </tr>
                 <tr>
                     <td>Voltage</td>
@@ -34,18 +54,90 @@
                     <td>{{machine.amperage}}</td>
                 </tr>
                 <tr>
+                    <td>Serie</td>
+                    <td>{{machine.serie}}</td>
+                </tr>
+                <tr>
                     <td>Id line</td>
                     <td>{{machine.id_line}}</td>
                 </tr>
                 <tr>
+                    <td>Manufacturing date</td>
+                    <td>{{machine.manufacturing_date.strftime("%d/%m/%Y")}}</td>
+                </tr>
+                <tr>
+                    <td>Instalation datge</td>
+                    <td>{{machine.instalation_date.strftime("%d/%m/%Y")}}</td>
+                </tr>
+                <tr>
+                    <td>Id supplier</td>
+                    <td>{{machine.id_supplier}}</td>
+                </tr>
+                <tr>
                     <td>Run date</td>
-                    <td>{{machine.run_date}}</td>
+                    <td>{{machine.run_date.strftime("%d/%m/%Y")}}</td>
                 </tr>
             </tbody>
           </table>
         </div>
+        </div>
+        <br>
         {% endfor %}
     </div>
 </div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Borrar: <span></span></h5>
+        <button type="button" class="btn btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ¿Seguro que desea borrar la maquina seleccionada?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <a href="#" id="deleteProduct" class="btn btn-danger">Borrar</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+        } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    });
+    }
+</script>
+
+<script>
+    window.onload = function () {
+        
+    $("#deleteModal").on("show.bs.modal", function (event) {
+        var button = event.relatedTarget
+        var name = button.getAttribute("data-name")
+        var id = button.getAttribute("data-id")
+        
+        console.log(this)
+
+        this.querySelector(".modal-title span").innerHTML=name
+        this.querySelector("#deleteProduct").setAttribute("href","/machine/delete/"+id)
+    })
+
+    }
+  </script>
 
 {% endblock %}

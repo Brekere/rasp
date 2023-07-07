@@ -8,8 +8,8 @@
     </div>
     <a data-toggle="tooltip" data-placement="top" data-title="Editar" class="btn btn-success btn-sm" href="{{ url_for('machine.machine_update', id=machine['id']) }}"><i class="fa fa-edit"></i></a>
 
-    <button data-toggle="modal" data-target="#deleteModal" data-name="{{machine['nickname']}}" data-id="{{machine['id']}}"
-    class="btn btn-danger btn-sm" href="{{ url_for('machine.machine_delete', id=machine['id']) }}"><i data-toggle="tooltip" data-placement="top" data-bs-title="Eliminar producto {{ machine['nickname'] }}" class="fa fa-trash"></i></button>
+    <a data-toggle="modal" data-target="#deleteModal" data-name="{{machine['nickname']}}" data-id="{{machine['id']}}"
+    class="btn btn-danger btn-sm" href="{{ url_for('machine.machine_delete', id=machine['id']) }}"><i data-toggle="tooltip" data-placement="top" data-bs-title="Eliminar producto {{ machine['nickname'] }}" class="fa fa-trash"></i></a>
 
 <table class="blueTable">
     <thead>
@@ -53,11 +53,11 @@
         </tr>
         <tr>
             <td>Manufacturing date</td>
-            <td>{{machine.manufacturing_date}}</td>
+            <td>{{machine.manufacturing_date.strftime("%d/%m/%Y")}}</td>
         </tr>
         <tr>
             <td>Instalation datge</td>
-            <td>{{machine.instalation_date}}</td>
+            <td>{{machine.instalation_date.strftime("%d/%m/%Y")}}</td>
         </tr>
         <tr>
             <td>Id supplier</td>
@@ -65,7 +65,7 @@
         </tr>
         <tr>
             <td>Run date</td>
-            <td>{{machine.run_date}}</td>
+            <td>{{machine.run_date.strftime("%d/%m/%Y")}}</td>
         </tr>
 
     </tbody>
