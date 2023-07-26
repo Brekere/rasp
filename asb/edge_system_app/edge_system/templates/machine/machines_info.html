@@ -3,17 +3,12 @@
 {% block content %}
 
 <a data-toggle="tooltip" data-placement="top" data-title="Registrar" class="btn btn-primary" href="{{ url_for('machine.machine_register') }}">Registrar maquina</a>
-
-<div class="jumbotron">
-    <div>
-        <h1 class="display-4">Maquinas</h1>
-    </div>
-      
+       
         {%  for machine in machines%}
         <!-- Page content-->
         <div class="borde">
             <button class="accordion">
-                <h1 class="display-4"> <img src="{{ url_for('static',filename="/uploads/"+machine.file)}}" height="80" alt="Avatar">
+                <h1 class="display-4"> <img src="{{ url_for('static',filename="/uploads/"+machine.file)}}" height="80">
                   {{ machine['nickname'] }}
                 </h1>
             </button>
@@ -84,7 +79,7 @@
         <br>
         {% endfor %}
     </div>
-</div>
+
 
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">

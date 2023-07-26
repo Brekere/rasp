@@ -22,33 +22,31 @@ def constructor():
 
 @control.route('/panel')
 def panel():
-    print('Panel')
+    '''print('Panel')'''
     return render_template('control/panel.html')
     
-
-@control.route('/stop')
+@control.route('/panel/stop')
 def stop():
-    print('stop')
-    flash('Paro de emergencia','danger')
-    return render_template('control/panel.html')
-    
+    '''print('stop')
+    flash('Paro de emergencia','danger')'''
+    return render_template('control/panel.html')    
 
-@control.route('/luz/on')
+@control.route('/panel/on')
 def luzon():
-    print('luzon')
-    flash('Luz prendida','warning')
+    '''print('luzon')
+    flash('Luz prendida','warning')'''
     return render_template('control/panel.html')
 
-@control.route('/luz/off')
+@control.route('/panel/off')
 def luzoff():
-    print('luzoff')
-    flash('Luz apagada','dark')
+    '''print('luzoff')
+    flash('Luz apagada','dark')'''
     return render_template('control/panel.html')
 
-@control.route('/start')
+@control.route('/panel/start')
 def start():
-    print('start')
-    flash('Inicio')
+    '''print('start')
+    flash('Inicio')'''
     return render_template('control/panel.html')
     
 

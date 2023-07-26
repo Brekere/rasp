@@ -20,12 +20,12 @@ def production_all():
     ok = sum([p.OK for p in Part.query.all()])
     nok = sum([p.NOK for p in Part.query.all()])
     date = [p.timestamp for p in Part.query.all()]
-    print(date)
+    '''print(date)
 
     for p in date:
         print(p.day)
         print(p.month)
-        print(p.year)
+        print(p.year)'''
 
     #print(p.strftime("%d/%m/%Y"))
         
